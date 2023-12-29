@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import { getProviders, signIn, useSession } from "next-auth/react";
-import Loading from "@/components/Loading";
+
 
 const Register = () => {
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const Register = () => {
   console.log(session);
   if (session.status === "loading") {
     return (
-      <Loading/>
+     <div>Loading...</div>
     );
   }
 
