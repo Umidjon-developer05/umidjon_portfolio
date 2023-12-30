@@ -78,7 +78,7 @@ const TopicsList = () => {
             >
               <div>
                 <h2 className="font-bold text-2xl">{t.title}</h2>
-                <div style={{width:"150px",height:"100px",padding:"10px"}}>{t.description}</div>
+                <div style={{width:"150px"}}>{t.description}</div>
               </div>
   
               <div className="flex gap-2 align-items-center">
