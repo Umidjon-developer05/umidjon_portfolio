@@ -79,12 +79,13 @@ const UsersGet = () => {
           style={{
             borderRadius: "20px",
             backgroundColor:
-             title === 'ish bajarildi😄'
+              clickedButtonId === t._id
+                ? title === 'ish bajarildi😄'
                   ? 'green'
                   : title === 'ish bajarilmadi😔'
                   ? 'red'
                   : 'initial'
-                
+                : 'initial',
           }}
         >
           <div>
