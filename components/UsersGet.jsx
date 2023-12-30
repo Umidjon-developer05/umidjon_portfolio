@@ -27,15 +27,26 @@ const UsersGet = () => {
   }, []);
 
   const Work = async (id) => {
-    setTitle('ish bajarildi😄');
+    const selectedTopic = topics.topics.find((t) => t._id === id);
+    if (!selectedTopic) {
+      console.error("Selected topic not found");
+      return;
+    }
+
+    setTitle(selectedTopic.title);
     setClickedButtonId(id);
+
     try {
       const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ title, id }),
+        body: JSON.stringify({
+          id,
+          title: selectedTopic.title,
+          description: selectedTopic.description,
+        }),
       });
 
       if (res.ok) {
@@ -49,15 +60,26 @@ const UsersGet = () => {
   };
 
   const WorkNo = async (id) => {
-    setTitle('ish bajarilmadi😔');
+    const selectedTopic = topics.topics.find((t) => t._id === id);
+    if (!selectedTopic) {
+      console.error("Selected topic not found");
+      return;
+    }
+
+    setTitle(selectedTopic.title);
     setClickedButtonId(id);
+
     try {
       const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ title, id }),
+        body: JSON.stringify({
+          id,
+          title: selectedTopic.title,
+          description: selectedTopic.description,
+        }),
       });
 
       if (res.ok) {

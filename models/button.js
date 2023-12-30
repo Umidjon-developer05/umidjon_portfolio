@@ -3,6 +3,7 @@ import mongoose, { Schema } from "mongoose";
 const buttonSchema = new Schema(
   {
     title: String,
+    description:String
   },
   {
     timestamps: true,
