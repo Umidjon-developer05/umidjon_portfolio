@@ -101,8 +101,7 @@ const TopicsList = () => {
             >
               <div>
                 <h2 className="font-bold text-2xl">{item.title}</h2>
-                <div>{item.description}</div>
-                <div>{item.desc}</div>
+                <div>{item.desc ? item.desc :'ish bajarildi😁'}</div>
               </div>
   
               <div className="flex gap-2 align-items-center">
