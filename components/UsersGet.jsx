@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 const UsersGet = () => {
   const [topics, setTopics] = useState([]);
   const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
   const [clickedButtonId, setClickedButtonId] = useState(null);
 
   useEffect(() => {
@@ -34,6 +35,7 @@ const UsersGet = () => {
     }
 
     setTitle(selectedTopic.title);
+    setDesc('ish bajarildi😁')
     setClickedButtonId(id);
 
     try {
@@ -45,6 +47,7 @@ const UsersGet = () => {
         body: JSON.stringify({
           id,
           title: selectedTopic.title,
+          desc,
           description: selectedTopic.description,
         }),
       });
@@ -67,6 +70,7 @@ const UsersGet = () => {
     }
 
     setTitle(selectedTopic.title);
+    setDesc('ish bajarildi😒')
     setClickedButtonId(id);
 
     try {
@@ -78,6 +82,7 @@ const UsersGet = () => {
         body: JSON.stringify({
           id,
           title: selectedTopic.title,
+          desc,
           description: selectedTopic.description,
         }),
       });
