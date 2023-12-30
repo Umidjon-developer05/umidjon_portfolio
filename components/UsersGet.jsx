@@ -101,12 +101,10 @@ const UsersGet = () => {
           style={{
             borderRadius: "20px",
             backgroundColor:
-              clickedButtonId === t._id
-                ? title === 'ish bajarildi😄'
-                  ? 'green'
-                  : title === 'ish bajarilmadi😔'
-                  ? 'red'
-                  : 'initial'
+              clickedButtonId === t._id && title === 'ish bajarildi😄'
+                ? 'green'
+                : clickedButtonId === t._id && title === 'ish bajarilmadi😔'
+                ? 'red'
                 : 'initial',
           }}
         >
