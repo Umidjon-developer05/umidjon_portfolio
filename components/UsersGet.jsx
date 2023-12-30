@@ -112,8 +112,8 @@ const WorkNo = async (id) => {
           style={{
             borderRadius: "20px",
             backgroundColor:
-            clickedButtonId === t._id && title === 'ish bajarildi😁' ? 'green' :
-            clickedButtonId === t._id && title === 'ish bajarildi😒' ? 'red' :
+            clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'green' :
+            clickedButtonId === t._id && desc === 'ish bajarildi😒' ? 'red' :
             'initial',
           }}
         >
