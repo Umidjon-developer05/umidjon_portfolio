@@ -54,6 +54,7 @@ const Work = async (id) => {
       }),
     });
 
+
     if (res.ok) {
       // Optionally, you can update the state or perform any other actions on success
     } else {
@@ -111,9 +112,9 @@ const WorkNo = async (id) => {
           style={{
             borderRadius: "20px",
             backgroundColor:
-            clickedButtonId === t._id && title === 'ish bajarildi😄'
+             title === 'ish bajarildi😄'
               ? 'green'
-              : clickedButtonId === t._id && title === 'ish bajarilmadi😔'
+              :  title === 'ish bajarilmadi😔'
               ? 'red'
               : 'initial',
           }}
