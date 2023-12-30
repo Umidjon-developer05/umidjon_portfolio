@@ -4,13 +4,9 @@ const UsersGet = () => {
   const [topics, setTopics] = useState([]);
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
+  const [clickedButtonId, setClickedButtonId] = useState(null);
   const [buttonClicked, setButtonClicked] = useState(false);
-  const [clickedButtonIds, setClickedButtonIds] = useState(() => {
-    // Retrieve previously clicked button IDs from local storage on component mount
-    const storedClickedIds = localStorage.getItem('clickedButtonIds');
-    return storedClickedIds ? JSON.parse(storedClickedIds) : [];
-  });
-
+  const [clickedButtonIds, setClickedButtonIds] = useState([]);
   useEffect(() => {
     const UserData = async () => {
       try {
@@ -33,7 +29,7 @@ const UsersGet = () => {
   }, []);
 
   const Work = async (id) => {
-    if (buttonClicked || clickedButtonIds.includes(id)) {
+    if (buttonClicked || clickedButtonId === id) {
       // Button already clicked or request already sent, do nothing
       return;
     }
@@ -45,10 +41,10 @@ const UsersGet = () => {
       console.error("Selected topic not found");
       return;
     }
-
+    setClickedButtonIds((prevIds) => [...prevIds, id]);
     setTitle(selectedTopic.title);
     setDesc('ish bajarildi😁');
-    setClickedButtonIds((prevIds) => [...prevIds, id]);
+    setClickedButtonId(id);
 
     try {
       const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
@@ -66,8 +62,6 @@ const UsersGet = () => {
 
       if (res.ok) {
         // Optionally, you can update the state or perform any other actions on success
-        // Update local storage with the new clickedButtonIds
-        localStorage.setItem('clickedButtonIds', JSON.stringify(clickedButtonIds));
       } else {
         throw new Error("Failed to create a topic");
       }
@@ -78,6 +72,8 @@ const UsersGet = () => {
     }
   };
 
+  
+
   return (
     <div style={{ width: "100%" }}>
       {topics.topics?.map((t) => (
@@ -86,12 +82,13 @@ const UsersGet = () => {
           className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
           style={{
             borderRadius: "20px",
-            backgroundColor: clickedButtonIds.includes(t._id) && desc === 'ish bajarildi😁' ? 'green' : 'initial',
+            backgroundColor:
+            clickedButtonIds.includes(t._id) && desc === 'ish bajarildi😁' ? 'green' : 'initial',
           }}
         >
           <div>
-            <h2 className="font-bold text-2xl" style={{ color: clickedButtonIds.includes(t._id) && desc === 'ish bajarildi😁' ? '#fff' : '#222' }}>{t.title}</h2>
-            <div style={{ color: clickedButtonIds.includes(t._id) && desc === 'ish bajarildi😁' ? '#fff' : '#222' }}>{t.description}</div>
+            <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#fff':'#222'}}>{t.title}</h2>
+            <div  style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#fff':'#222'}}>{t.description}</div>
           </div>
 
           <div className="flex gap-2 align-items-center">
@@ -99,11 +96,12 @@ const UsersGet = () => {
             <button
               className='btn'
               onClick={() => Work(t._id)}
-              style={{ padding: "10px", borderRadius: "20px", color: "#fff", backgroundColor: clickedButtonIds.includes(t._id) && desc === 'ish bajarildi😁' ? 'red' : "green" }}
+              style={{ padding: "10px", borderRadius: "20px", color: "#fff", backgroundColor:   clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red':"green" }}
               disabled={buttonClicked}
             >
               Ish😄
             </button>
+            
           </div>
         </div>
       ))}
