@@ -83,8 +83,7 @@ const UsersGet = () => {
           style={{
             borderRadius: "20px",
             backgroundColor:
-              clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'green' :
-              'initial',
+            clickedButtonId.includes(t._id) && desc === 'ish bajarildi😁' ? 'green' : 'initial',
           }}
         >
           <div>
