@@ -88,8 +88,8 @@ const UsersGet = () => {
           }}
         >
           <div>
-            <h2 className="font-bold text-2xl">{t.title}</h2>
-            <div>{t.description}</div>
+            <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#fff':'#222'}}>{t.title}</h2>
+            <div  style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#fff':'#222'}}>{t.description}</div>
           </div>
 
           <div className="flex gap-2 align-items-center">
