@@ -97,7 +97,7 @@ const UsersGet = () => {
             <button
               className='btn'
               onClick={() => Work(t._id)}
-              style={{ padding: "10px", borderRadius: "20px", color: "#fff", backgroundColor: "green" }}
+              style={{ padding: "10px", borderRadius: "20px", color: "#fff", backgroundColor:   clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red':"green" }}
               disabled={buttonClicked}
             >
               Ish😄
