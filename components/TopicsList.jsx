@@ -92,7 +92,7 @@ const TopicsList = () => {
       </div>
       <div>
         {
-          Button.button.map((item)=>
+          Button.map((item)=>
           <div
               key={item._id}
               className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-start"
