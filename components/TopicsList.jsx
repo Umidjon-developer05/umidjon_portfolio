@@ -5,6 +5,7 @@ import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import { useSession } from "next-auth/react";
 import UsersGet from "./UsersGet";
+import RemoveBtn1 from "./RemoveBtn1";
 
 // Other imports...
 // Other imports...
@@ -92,6 +93,7 @@ const TopicsList = () => {
       
       </div>
       <div>
+        <h1>Ish status</h1>
         {
           Button?.button?.map((item)=>
           <div
@@ -105,7 +107,7 @@ const TopicsList = () => {
               </div>
   
               <div className="flex gap-2 align-items-center">
-                
+                <RemoveBtn1 id={item._id} />
               </div>
             </div>
           )
