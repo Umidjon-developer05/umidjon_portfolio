@@ -31,6 +31,12 @@ const UsersGet = () => {
     UserData();
   }, []);
 
+  useEffect(() => {
+    // Set the initial state of clickedButtonIds based on localStorage
+    const storedClickedButtonIds = JSON.parse(localStorage.getItem('clickedButtonIds')) || [];
+    setClickedButtonIds(storedClickedButtonIds);
+  }, []);
+
   const Work = async (id) => {
     if (buttonClicked || clickedButtonId === id) {
       // Button already clicked or request already sent, do nothing
@@ -39,7 +45,7 @@ const UsersGet = () => {
 
     setButtonClicked(true);
 
-    const selectedTopic = topics.topics.find((t) => t._id === id);
+    const selectedTopic = topics.find((t) => t._id === id);
     if (!selectedTopic) {
       console.error("Selected topic not found");
       return;
