@@ -11,7 +11,7 @@ const UsersGet = () => {
   );
 
   useEffect(() => {
-    const fetchData = async () => {
+    const UserData = async () => {
       try {
         const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/topics", {
           cache: "no-store",
@@ -28,7 +28,7 @@ const UsersGet = () => {
       }
     };
 
-    fetchData();
+    UserData();
   }, []);
 
   const Work = async (id) => {
@@ -39,7 +39,7 @@ const UsersGet = () => {
 
     setButtonClicked(true);
 
-    const selectedTopic = topics.find((t) => t._id === id);
+    const selectedTopic = topics.topics.find((t) => t._id === id);
     if (!selectedTopic) {
       console.error("Selected topic not found");
       return;
