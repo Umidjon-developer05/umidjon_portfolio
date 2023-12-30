@@ -6,6 +6,7 @@ import { HiPencilAlt } from "react-icons/hi";
 import { useSession } from "next-auth/react";
 import UsersGet from "./UsersGet";
 import RemoveBtn1 from "./RemoveBtn1";
+import Xato from "./Xato";
 
 // Other imports...
 // Other imports...
@@ -64,7 +65,7 @@ const TopicsList = () => {
   console.log(Button);
 
   if (!session?.user?.email) {
-    return <div>404</div>;
+    return <Xato/>;
   }
   if (session?.user?.email === process.env.NEXT_PUBLIC_EMAIL) {
     return (
