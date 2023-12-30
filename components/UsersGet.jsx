@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 const UsersGet = () => {
     const [topics, setTopics] = useState([]);
+    const [title, setTitle] = useState('');
     useEffect(() => {
         const UserData = async () => {
           try {
@@ -21,7 +22,36 @@ const UsersGet = () => {
         };
     
         UserData();
-      }, []); // Empty dependency array ensures the effect runs only once on mount
+      }, []); 
+      const Work =()=>{
+        setTitle('ish bajarildi😄')
+      }
+      const WorkNo =()=>{
+        setTitle('ish bajarilmadi😔')
+      }
+
+      useEffect(()=>{
+        const ButtonSubmit = async()=>{
+        try {
+          const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify({ title }),
+          });
+    
+          if (res.ok) {
+            router.push("/");
+          } else {
+            throw new Error("Failed to create a topic");
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      ButtonSubmit()
+      },[])
   return (
     <div style={{width:"100%"}}>
         {
@@ -39,8 +69,8 @@ const UsersGet = () => {
 
             <div className=" flex gap-2 align-items-center">
                 <div></div>
-            <button className='btn' style={{padding:"10px", borderRadius:"20px",color:"#fff",backgroundColor:"green"}}>Ish😄</button>
-            <button className='btn' style={{padding:"10px",borderRadius:"20px",color:"#fff",backgroundColor:"red"}}>Ish😔</button>
+            <button className='btn' onClick={Work} style={{padding:"10px", borderRadius:"20px",color:"#fff",backgroundColor:"green"}}>Ish😄</button>
+            <button className='btn' onClick={WorkNo} style={{padding:"10px",borderRadius:"20px",color:"#fff",backgroundColor:"red"}}>Ish😔</button>
             </div>
           </div>
             )
