@@ -72,49 +72,7 @@ const UsersGet = () => {
     }
   };
 
-  const WorkNo = async (id) => {
-    if (buttonClicked || clickedButtonId === id) {
-      // Button already clicked or request already sent, do nothing
-      return;
-    }
-
-    setButtonClicked(true);
-
-    const selectedTopic = topics.topics.find((t) => t._id === id);
-    if (!selectedTopic) {
-      console.error("Selected topic not found");
-      return;
-    }
-
-    setTitle(selectedTopic.title);
-    setDesc('ish bajarilmadi😒');
-    setClickedButtonId(id);
-
-    try {
-      const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          id,
-          title: selectedTopic.title,
-          desc,
-          description: selectedTopic.description,
-        }),
-      });
-
-      if (res.ok) {
-        // Optionally, you can update the state or perform any other actions on success
-      } else {
-        throw new Error("Failed to create a topic");
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setButtonClicked(false);
-    }
-  };
+  
 
   return (
     <div style={{ width: "100%" }}>
@@ -126,7 +84,6 @@ const UsersGet = () => {
             borderRadius: "20px",
             backgroundColor:
               clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'green' :
-              clickedButtonId === t._id && desc === 'ish bajarilmadi😒' ? 'red' :
               'initial',
           }}
         >
@@ -145,14 +102,7 @@ const UsersGet = () => {
             >
               Ish😄
             </button>
-            <button
-              className='btn'
-              onClick={() => WorkNo(t._id)}
-              style={{ padding: "10px", borderRadius: "20px", color: "#fff", backgroundColor: "red" }}
-              disabled={buttonClicked}
-            >
-              Ish😔
-            </button>
+            
           </div>
         </div>
       ))}
