@@ -39,8 +39,8 @@ const UsersGet = () => {
 
             <div className=" flex gap-2 align-items-center">
                 <div></div>
-            <button className='btn ' style={{padding:"10px", borderRadius:"20px",color:"#fff",backgroundColor:"green"}}>Ish😄</button>
-            <button className='btn ' style={{padding:"10px",borderRadius:"20px",color:"#fff",backgroundColor:"red"}}>Ish😔</button>
+            <button className='btn' style={{padding:"10px", borderRadius:"20px",color:"#fff",backgroundColor:"green"}}>Ish😄</button>
+            <button className='btn' style={{padding:"10px",borderRadius:"20px",color:"#fff",backgroundColor:"red"}}>Ish😔</button>
             </div>
           </div>
             )
