@@ -5,6 +5,7 @@ const UsersGet = () => {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
   const [clickedButtonId, setClickedButtonId] = useState(null);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
     const UserData = async () => {
@@ -27,81 +28,87 @@ const UsersGet = () => {
     UserData();
   }, []);
 
- // ... (previous code)
-
-const Work = async (id) => {
-  const selectedTopic = topics.topics.find((t) => t._id === id);
-  if (!selectedTopic) {
-    console.error("Selected topic not found");
-    return;
-  }
-
-  setTitle(selectedTopic.title);
-  setDesc('ish bajarildi😁'); // <-- Fixed typo here
-  setClickedButtonId(id);
-
-  try {
-    const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        id,
-        title: selectedTopic.title,
-        desc: desc, // <-- Fixed typo here
-        description: selectedTopic.description,
-      }),
-    });
-
-
-    if (res.ok) {
-      // Optionally, you can update the state or perform any other actions on success
-    } else {
-      throw new Error("Failed to create a topic");
+  const Work = async (id) => {
+    if (buttonClicked || clickedButtonId === id) {
+      // Button already clicked or request already sent, do nothing
+      return;
     }
-  } catch (error) {
-    console.log(error);
-  }
-};
 
-const WorkNo = async (id) => {
-  const selectedTopic = topics.topics.find((t) => t._id === id);
-  if (!selectedTopic) {
-    console.error("Selected topic not found");
-    return;
-  }
-
-  setTitle(selectedTopic.title);
-  setDesc('ish bajarilmadi😒'); // <-- Fixed typo here
-  setClickedButtonId(id);
-
-  try {
-    const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        id,
-        title: selectedTopic.title,
-        desc: desc, // <-- Fixed typo here
-        description: selectedTopic.description,
-      }),
-    });
-
-    if (res.ok) {
-      // Optionally, you can update the state or perform any other actions on success
-    } else {
-      throw new Error("Failed to create a topic");
+    const selectedTopic = topics.topics.find((t) => t._id === id);
+    if (!selectedTopic) {
+      console.error("Selected topic not found");
+      return;
     }
-  } catch (error) {
-    console.log(error);
-  }
-};
 
-// ... (rest of the code)
+    setTitle(selectedTopic.title);
+    setDesc('ish bajarildi😁');
+    setClickedButtonId(id);
+    setButtonClicked(true);
 
+    try {
+      const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          id,
+          title: selectedTopic.title,
+          desc,
+          description: selectedTopic.description,
+        }),
+      });
+
+      if (res.ok) {
+        // Optionally, you can update the state or perform any other actions on success
+      } else {
+        throw new Error("Failed to create a topic");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const WorkNo = async (id) => {
+    if (buttonClicked || clickedButtonId === id) {
+      // Button already clicked or request already sent, do nothing
+      return;
+    }
+
+    const selectedTopic = topics.topics.find((t) => t._id === id);
+    if (!selectedTopic) {
+      console.error("Selected topic not found");
+      return;
+    }
+
+    setTitle(selectedTopic.title);
+    setDesc('ish bajarilmadi😒');
+    setClickedButtonId(id);
+    setButtonClicked(true);
+
+    try {
+      const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          id,
+          title: selectedTopic.title,
+          desc,
+          description: selectedTopic.description,
+        }),
+      });
+
+      if (res.ok) {
+        // Optionally, you can update the state or perform any other actions on success
+      } else {
+        throw new Error("Failed to create a topic");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div style={{ width: "100%" }}>
@@ -112,9 +119,9 @@ const WorkNo = async (id) => {
           style={{
             borderRadius: "20px",
             backgroundColor:
-            clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'green' :
-            clickedButtonId === t._id && desc === 'ish bajarilmadi😒' ? 'red' :
-            'initial',
+              clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'green' :
+              clickedButtonId === t._id && desc === 'ish bajarilmadi😒' ? 'red' :
+              'initial',
           }}
         >
           <div>
