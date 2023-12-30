@@ -27,75 +27,80 @@ const UsersGet = () => {
     UserData();
   }, []);
 
-  const Work = async (id) => {
-    const selectedTopic = topics.topics.find((t) => t._id === id);
-    if (!selectedTopic) {
-      console.error("Selected topic not found");
-      return;
+ // ... (previous code)
+
+const Work = async (id) => {
+  const selectedTopic = topics.topics.find((t) => t._id === id);
+  if (!selectedTopic) {
+    console.error("Selected topic not found");
+    return;
+  }
+
+  setTitle(selectedTopic.title);
+  setDesc('ish bajarildi😁'); // <-- Fixed typo here
+  setClickedButtonId(id);
+
+  try {
+    const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        id,
+        title: selectedTopic.title,
+        desc: desc, // <-- Fixed typo here
+        description: selectedTopic.description,
+      }),
+    });
+
+    if (res.ok) {
+      // Optionally, you can update the state or perform any other actions on success
+    } else {
+      throw new Error("Failed to create a topic");
     }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-    setTitle(selectedTopic.title);
-    setDesc('ish bajarildi😁')
-    setClickedButtonId(id);
+const WorkNo = async (id) => {
+  const selectedTopic = topics.topics.find((t) => t._id === id);
+  if (!selectedTopic) {
+    console.error("Selected topic not found");
+    return;
+  }
 
-    try {
-      const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          id,
-          title: selectedTopic.title,
-          desc,
-          description: selectedTopic.description,
-        }),
-      });
+  setTitle(selectedTopic.title);
+  setDesc('ish bajarildi😒'); // <-- Fixed typo here
+  setClickedButtonId(id);
 
-      if (res.ok) {
-        // Optionally, you can update the state or perform any other actions on success
-      } else {
-        throw new Error("Failed to create a topic");
-      }
-    } catch (error) {
-      console.log(error);
+  try {
+    const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        id,
+        title: selectedTopic.title,
+        desc: desc, // <-- Fixed typo here
+        description: selectedTopic.description,
+      }),
+    });
+
+    if (res.ok) {
+      // Optionally, you can update the state or perform any other actions on success
+    } else {
+      throw new Error("Failed to create a topic");
     }
-  };
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-  const WorkNo = async (id) => {
-    const selectedTopic = topics.topics.find((t) => t._id === id);
-    if (!selectedTopic) {
-      console.error("Selected topic not found");
-      return;
-    }
+// ... (rest of the code)
 
-    setTitle(selectedTopic.title);
-    setDesc('ish bajarildi😒')
-    setClickedButtonId(id);
-
-    try {
-      const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          id,
-          title: selectedTopic.title,
-          desc,
-          description: selectedTopic.description,
-        }),
-      });
-
-      if (res.ok) {
-        // Optionally, you can update the state or perform any other actions on success
-      } else {
-        throw new Error("Failed to create a topic");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <div style={{ width: "100%" }}>
