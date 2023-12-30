@@ -6,7 +6,7 @@ const UsersGet = () => {
   const [desc, setDesc] = useState('');
   const [clickedButtonId, setClickedButtonId] = useState(null);
   const [buttonClicked, setButtonClicked] = useState(false);
-
+  const [clickedButtonIds, setClickedButtonIds] = useState([]);
   useEffect(() => {
     const UserData = async () => {
       try {
@@ -41,7 +41,7 @@ const UsersGet = () => {
       console.error("Selected topic not found");
       return;
     }
-
+    setClickedButtonIds((prevIds) => [...prevIds, id]);
     setTitle(selectedTopic.title);
     setDesc('ish bajarildi😁');
     setClickedButtonId(id);
@@ -83,7 +83,7 @@ const UsersGet = () => {
           style={{
             borderRadius: "20px",
             backgroundColor:
-            clickedButtonId.includes(t._id) && desc === 'ish bajarildi😁' ? 'green' : 'initial',
+            clickedButtonIds.includes(t._id) && desc === 'ish bajarildi😁' ? 'green' : 'initial',
           }}
         >
           <div>
