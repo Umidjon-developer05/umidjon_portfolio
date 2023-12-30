@@ -3,9 +3,9 @@ import Button from "@/models/button";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const { title } = await request.json();
+  const { title ,desc,description} = await request.json();
   await connectMongoDB();
-  await Button.create({ title });
+  await Button.create({ title ,desc,description});
   return NextResponse.json({ message: "Topic Created" }, { status: 201 });
 }
 
