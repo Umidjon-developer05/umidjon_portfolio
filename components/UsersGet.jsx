@@ -73,7 +73,7 @@ const WorkNo = async (id) => {
   }
 
   setTitle(selectedTopic.title);
-  setDesc('ish bajarildi😒'); // <-- Fixed typo here
+  setDesc('ish bajarilmadi😒'); // <-- Fixed typo here
   setClickedButtonId(id);
 
   try {
@@ -112,11 +112,9 @@ const WorkNo = async (id) => {
           style={{
             borderRadius: "20px",
             backgroundColor:
-             title === 'ish bajarildi😄'
-              ? 'green'
-              :  title === 'ish bajarilmadi😔'
-              ? 'red'
-              : 'initial',
+            clickedButtonId === t._id && title === 'ish bajarildi😁' ? 'green' :
+            clickedButtonId === t._id && title === 'ish bajarildi😒' ? 'red' :
+            'initial',
           }}
         >
           <div>
