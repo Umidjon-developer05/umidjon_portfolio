@@ -60,6 +60,7 @@ const TopicsList = () => {
   if (status === "loading" || loading) {
     return <div>Loading...</div>; // Show loading indicator while fetching data
   }
+  console.log(Button);
 
   if (!session?.user?.email) {
     return <div>404</div>;
@@ -91,7 +92,7 @@ const TopicsList = () => {
       
       </div>
       <div>
-        {
+        {/* {
           Button.map((item)=>
           <div
               key={item._id}
@@ -109,7 +110,7 @@ const TopicsList = () => {
               </div>
             </div>
           )
-        }
+        } */}
       </div>
       </>
     );
