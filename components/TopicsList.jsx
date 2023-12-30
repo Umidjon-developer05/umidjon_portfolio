@@ -12,6 +12,7 @@ import UsersGet from "./UsersGet";
 const TopicsList = () => {
   const { data: session, status } = useSession();
   const [topics, setTopics] = useState([]);
+  const [Button, setButton] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -36,7 +37,26 @@ const TopicsList = () => {
 
     fetchTopicsData();
   }, []); // Empty dependency array ensures the effect runs only once on mount
+  useEffect(() => {
+    const UserData = async () => {
+      try {
+        const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
+          cache: "no-store",
+        });
 
+        if (!res.ok) {
+          throw new Error("Failed to fetch topics");
+        }
+
+        const ButtonData = await res.json();
+        setButton(ButtonData);
+      } catch (error) {
+        console.log("Error loading topics: ", error);
+      }
+    };
+
+    UserData();
+  }, []);
   if (status === "loading" || loading) {
     return <div>Loading...</div>; // Show loading indicator while fetching data
   }
@@ -46,6 +66,7 @@ const TopicsList = () => {
   }
   if (session?.user?.email === process.env.NEXT_PUBLIC_EMAIL) {
     return (
+      <>
       <div style={{ overflowY:"auto",height:"500px"}}>{
           topics.topics.map((t) => (
             <div
@@ -67,7 +88,30 @@ const TopicsList = () => {
             </div>
           ))
       }
+      
       </div>
+      <div>
+        {
+          Button.button.map((item)=>
+          <div
+              key={item._id}
+              className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-start"
+              style={{ borderRadius: "20px"}}
+            >
+              <div>
+                <h2 className="font-bold text-2xl">{item.title}</h2>
+                <div>{item.description}</div>
+                <div>{item.desc}</div>
+              </div>
+  
+              <div className="flex gap-2 align-items-center">
+                
+              </div>
+            </div>
+          )
+        }
+      </div>
+      </>
     );
   }else{
     return(
