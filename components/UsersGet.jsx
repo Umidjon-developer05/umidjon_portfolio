@@ -90,9 +90,7 @@ const UsersGet = () => {
           className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
           style={{
             borderRadius: "20px",
-            backgroundColor:
-              clickedButtonIds.includes(t._id) && desc === 'ish bajarildi😁' ? 'green' :
-              clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red' : 'initial',
+            
           }}
         >
           <div>
