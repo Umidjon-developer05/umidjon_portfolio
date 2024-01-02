@@ -93,7 +93,7 @@ const TopicsList = () => {
       
       </div>
       <div>
-        <h1>Ish status</h1>
+        <h1 style={{textAlign:"center",fontSize:"20px"}}>Ish status</h1>
         {
           Button?.button?.map((item)=>
           <div

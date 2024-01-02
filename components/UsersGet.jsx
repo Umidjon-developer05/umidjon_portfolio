@@ -30,7 +30,11 @@ const UsersGet = () => {
 
     UserData();
   }, []);
-
+  useEffect(() => {
+    // Set the initial state of clickedButtonIds based on localStorage
+    const storedClickedButtonIds = JSON.parse(localStorage.getItem('clickedButtonIds')) || [];
+    setClickedButtonIds(storedClickedButtonIds);
+  }, []);
   const Work = async (id) => {
     if (buttonClicked || clickedButtonId === id) {
       // Button already clicked or request already sent, do nothing
