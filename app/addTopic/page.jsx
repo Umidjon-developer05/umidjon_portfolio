@@ -39,7 +39,7 @@ export default function AddTopic() {
     };
   
     return (
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3 container">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3 container" style={{margin:"0 auto",padding:"20px"}}>
         <input
           onChange={(e) => setTitle(e.target.value)}
           value={title}
