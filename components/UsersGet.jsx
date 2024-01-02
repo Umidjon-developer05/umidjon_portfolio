@@ -30,20 +30,18 @@ const UsersGet = () => {
 
     UserData();
   }, []);
-  useEffect(() => {
-    // Set the initial state of clickedButtonIds based on localStorage
-    const storedClickedButtonIds = JSON.parse(localStorage.getItem('clickedButtonIds')) || [];
-    setClickedButtonIds(storedClickedButtonIds);
-  }, []);
+
+  // ... (rest of your code remains unchanged)
+
   const Work = async (id) => {
-    if (buttonClicked || clickedButtonId === id) {
+    if (buttonClicked || clickedButtonIds.includes(id)) {
       // Button already clicked or request already sent, do nothing
       return;
     }
 
     setButtonClicked(true);
 
-    const selectedTopic = topics.topics.find((t) => t._id === id);
+    const selectedTopic = topics.find((t) => t._id === id);
     if (!selectedTopic) {
       console.error("Selected topic not found");
       return;
@@ -86,7 +84,7 @@ const UsersGet = () => {
 
   return (
     <div style={{ width: "100%" }}>
-      {topics.topics?.map((t) => (
+      {topics.map((t) => (
         <div
           key={t._id}
           className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
@@ -111,9 +109,10 @@ const UsersGet = () => {
                 padding: "10px",
                 borderRadius: "20px",
                 color: "#fff",
-                backgroundColor: clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red' : 'green',
+                backgroundColor: clickedButtonIds.includes(t._id) ? 'gray' : 
+                  (clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red' : 'green'),
               }}
-              disabled={buttonClicked}
+              disabled={buttonClicked || clickedButtonIds.includes(t._id)}
             >
               Ish😄
             </button>
