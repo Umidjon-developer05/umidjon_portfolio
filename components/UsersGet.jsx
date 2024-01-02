@@ -41,7 +41,7 @@ const UsersGet = () => {
 
     setButtonClicked(true);
 
-    const selectedTopic = topics.find((t) => t._id === id);
+    const selectedTopic = topics.topics?.find((t) => t._id === id);
     if (!selectedTopic) {
       console.error("Selected topic not found");
       return;
