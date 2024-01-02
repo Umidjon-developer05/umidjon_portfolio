@@ -34,7 +34,7 @@ const UsersGet = () => {
   // ... (rest of your code remains unchanged)
 
   const Work = async (id) => {
-    if (buttonClicked || clickedButtonIds.includes(id)) {
+    if (buttonClicked || clickedButtonIds.has(id)) {
       // Button already clicked or request already sent, do nothing
       return;
     }
@@ -79,8 +79,9 @@ const UsersGet = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem('clickedButtonIds', JSON.stringify(clickedButtonIds));
+    localStorage.setItem('clickedButtonIds', JSON.stringify(Array.from(clickedButtonIds)));
   }, [clickedButtonIds]);
+  
 
   return (
     <div style={{ width: "100%" }}>
