@@ -84,7 +84,7 @@ const UsersGet = () => {
 
   return (
     <div style={{ width: "100%" }}>
-      {topics.map((t) => (
+      {topics.topics?.map((t) => (
         <div
           key={t._id}
           className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
