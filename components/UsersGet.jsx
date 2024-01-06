@@ -116,43 +116,42 @@ const UsersGet = () => {
   }, [clickedButtonIds]);
   return (
     <div style={{ width: "100%" }}>
-      {topics.topics?.map((t) => {
-        const totalSeconds = convertTimeToSeconds(t.time1, t.time2, t.time3);
-        return (
-          <div
-            key={t._id}
-            className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
-            style={{
-              borderRadius: "20px",
-            }}
-          >
-           <div>
-            <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.title}</h2>
-            <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
-            <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
-            </div>
-           
-            
-            <div className="flex gap-2 align-items-center">
-              <div>{formatTime(totalSeconds)}</div>
-              <button
-                className='btn'
-                onClick={() => Work(t._id)}
-                style={{
-                  padding: "10px",
-                  borderRadius: "20px",
-                  color: "#fff",
-                  backgroundColor: clickedButtonIds.includes(t._id) ? 'gray' :
-                    (clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red' : 'green'),
-                }}
-                disabled={buttonClicked || clickedButtonIds.includes(t._id)}
-              >
-                Ish😄
-              </button>
-            </div>
-          </div>
-        );
-      })}
+    {topics.topics?.map((t) => {
+  const totalSeconds = convertTimeToSeconds(t.time1, t.time2, t.time3);
+  return (
+    <div
+      key={t._id}
+      className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
+      style={{
+        borderRadius: "20px",
+      }}
+    >
+      <div>
+        <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.title}</h2>
+        <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
+        <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
+      </div>
+      <div className="flex gap-2 align-items-center">
+        <div>{formatTime(totalSeconds)}</div>
+        <button
+          className='btn'
+          onClick={() => Work(t._id)}
+          style={{
+            padding: "10px",
+            borderRadius: "20px",
+            color: "#fff",
+            backgroundColor: clickedButtonIds.includes(t._id) ? 'gray' :
+              (clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red' : 'green'),
+          }}
+          disabled={buttonClicked || clickedButtonIds.includes(t._id)}
+        >
+          Ish😄
+        </button>
+      </div>
+    </div>
+  );
+    })}
+
     </div>
   );
 };
