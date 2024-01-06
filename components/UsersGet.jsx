@@ -117,7 +117,7 @@
     }, [clickedButtonIds]);
 
     return (
-      <div style={{ width: "100%",display:"flex" }}>
+      <div style={{ width: "100%",display:"flex" , margin:"0 auto" , flexWrap:"wrap"}}>
         {topics.topics?.map((t) => (
           <div
             key={t._id}
