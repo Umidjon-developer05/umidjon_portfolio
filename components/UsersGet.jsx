@@ -128,7 +128,7 @@
               height:"300px"
             }}
           >
-            <div className='flex  justify-center'>
+            <div style={{display:"flex",flexDirection:"column"}} >
               <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.title}</h2>
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
             </div>
