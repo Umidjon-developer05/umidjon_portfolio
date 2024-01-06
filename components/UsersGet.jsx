@@ -128,13 +128,13 @@
               height:"300px"
             }}
           >
-            <div className='flex justify-center'>
+            <div className='flex  justify-center'>
               <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.title}</h2>
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
-              <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
             </div>
            
-            <div className="flex gap-2 justify-end items-end" style={{height:"100%"}}>
+            <div className="flex gap-2 justify-end items-end" style={{marginTop:"200px"}}>
+              <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
               <button
                 className='btn'
                 onClick={() => Work(t._id)}
