@@ -38,20 +38,20 @@
         // Button already clicked or request already sent, do nothing
         return;
       }
-
+    
       setButtonClicked(true);
-
+    
       const selectedTopic = topics.topics?.find((t) => t._id === id);
       if (!selectedTopic) {
         console.error("Selected topic not found");
         return;
       }
-
+    
       setClickedButtonIds((prevIds) => [...prevIds, id]);
       setTitle(selectedTopic.title);
       setDesc('ish bajarildi😁');
       setClickedButtonId(id);
-
+    
       try {
         const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
           method: "POST",
@@ -65,7 +65,7 @@
             description: selectedTopic.description,
           }),
         });
-
+    
         if (res.ok) {
           // Optionally, you can update the state or perform any other actions on success
         } else {
@@ -75,8 +75,11 @@
         console.log(error);
       } finally {
         setButtonClicked(false);
+        // Reset the clickedButtonId state after the button is clicked
+        setClickedButtonId(null);
       }
     };
+    
 
 
 
