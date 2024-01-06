@@ -15,7 +15,7 @@ export default function AddTopic() {
     const handleSubmit = async (e) => {
       e.preventDefault();
   
-      if (!title || !description) {
+      if (!title || !description || !time) {
         alert("Title and description are required.");
         return;
       }
