@@ -133,7 +133,7 @@
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
             </div>
            
-            <div className="flex gap-2 justify-between " style={{marginTop:"170px",alignItems:"center"}}>
+            <div className="flex gap-2 justify-between " style={{alignItems:"end"}}>
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
              <div>
              <button
