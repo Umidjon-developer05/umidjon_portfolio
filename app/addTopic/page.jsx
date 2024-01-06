@@ -8,9 +8,6 @@ export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [time, setTime] = useState("");
-  const [time1, setTime1] = useState("");
-  const [time2, setTime2] = useState("");
-  const [time3, setTime3] = useState("");
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -18,7 +15,7 @@ export default function AddTopic() {
     const handleSubmit = async (e) => {
       e.preventDefault();
   
-      if (!title || !description || !time || !time1 || !time2 || !time3) {
+      if (!title || !description || !time ) {
         alert("Title and description are required.");
         return;
       }
@@ -29,7 +26,7 @@ export default function AddTopic() {
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({ title, description ,time,time1,time2,time3}),
+          body: JSON.stringify({ title, description ,time}),
         });
   
         if (res.ok) {
@@ -65,24 +62,7 @@ export default function AddTopic() {
           className="border border-slate-500 px-8 py-2"
           placeholder="Time"
         />
-        <input type="number" 
-         onChange={(e) => setTime1(e.target.value)}
-             value={time1}
-          className="border border-slate-500 px-8 py-2"
-          placeholder="Soat..."
-        />
-        <input type="number" 
-         onChange={(e) => setTime2(e.target.value)}
-             value={time2}
-          className="border border-slate-500 px-8 py-2"
-          placeholder="Minut...."
-        />
-        <input type="number" 
-         onChange={(e) => setTime3(e.target.value)}
-             value={time3}
-          className="border border-slate-500 px-8 py-2"
-          placeholder="seckund..."
-        />
+      
         <button
           type="submit"
           className="bg-green-600 font-bold text-white py-3 px-6 w-fit"

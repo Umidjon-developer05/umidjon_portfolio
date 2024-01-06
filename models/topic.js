@@ -4,10 +4,7 @@ const topicSchema = new Schema(
   {
     title: String,
     description: String,
-    time:String,
-    time1:String,
-    time2:String,
-    time3:String,
+    time:String
   },
   {
     timestamps: true,
