@@ -15,7 +15,7 @@ export default function Navbar() {
     <div>
       <nav className="flex justify-between items-center bg-slate-800 px-8 py-3 ">
       <Link className="text-white font-bold" href={"/"}>
-        GTCoding.
+        Ish Uz
       </Link>
       {
          email === process.env.NEXT_PUBLIC_EMAIL ?
