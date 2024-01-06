@@ -1,0 +1,9 @@
+.btn{
+    transition: 1s all;
+}
+.btn:hover{
+    background-color: aqua;
+    padding: 20px 20px 20px 20px;
+    margin-top: -10px;
+    color: #fff;
+}

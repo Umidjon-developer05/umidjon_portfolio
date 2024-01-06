@@ -1,5 +1,5 @@
-  import React, { useEffect, useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import "./UsersGet.css"
   const UsersGet = () => {
     const [topics, setTopics] = useState([]);
     const [title, setTitle] = useState('');
@@ -128,7 +128,7 @@
             style={{
               borderRadius: "20px",
               width:"400px",
-              height:"300px"
+              height:"400px"
             }}
           >
             <div style={{display:"flex",flexDirection:"column",overflow: "auto",height:"220px"}} >
