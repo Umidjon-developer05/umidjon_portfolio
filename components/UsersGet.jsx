@@ -124,7 +124,7 @@ import "./UsersGet.css"
         {topics.topics?.map((t) => (
           <div
             key={t._id}
-            className="main1 card p-4 border border-slate-300 my-3  justify-between gap-5 m-3 items-center "
+            className="main1  p-4 border border-slate-300 my-3  justify-between gap-5 m-3 items-center "
             style={{
               borderRadius: "20px",
               width:"400px",
