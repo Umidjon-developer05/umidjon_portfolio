@@ -117,14 +117,15 @@
     }, [clickedButtonIds]);
 
     return (
-      <div style={{ width: "100%" }}>
+      <div style={{ width: "100%",display:"flex" }}>
         {topics.topics?.map((t) => (
           <div
             key={t._id}
             className="card p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
             style={{
               borderRadius: "20px",
-              
+              width:"400px",
+              height:"300px"
             }}
           >
             <div>
