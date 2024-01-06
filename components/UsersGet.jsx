@@ -33,52 +33,52 @@
 
     // ... (rest of your code remains unchanged)
 
-    const Work = async (id) => {
-      if (buttonClicked || clickedButtonIds.includes(id)) {
-        // Button already clicked or request already sent, do nothing
-        return;
-      }
+    // const Work = async (id) => {
+    //   if (buttonClicked || clickedButtonIds.includes(id)) {
+    //     // Button already clicked or request already sent, do nothing
+    //     return;
+    //   }
     
-      setButtonClicked(true);
+    //   setButtonClicked(true);
     
-      const selectedTopic = topics.topics?.find((t) => t._id === id);
-      if (!selectedTopic) {
-        console.error("Selected topic not found");
-        return;
-      }
+    //   const selectedTopic = topics.topics?.find((t) => t._id === id);
+    //   if (!selectedTopic) {
+    //     console.error("Selected topic not found");
+    //     return;
+    //   }
     
-      setClickedButtonIds((prevIds) => [...prevIds, id]);
-      setTitle(selectedTopic.title);
-      setDesc('ish bajarildi😁');
-      setClickedButtonId(id);
+    //   setClickedButtonIds((prevIds) => [...prevIds, id]);
+    //   setTitle(selectedTopic.title);
+    //   setDesc('ish bajarildi😁');
+    //   setClickedButtonId(id);
     
-      try {
-        const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({
-            id,
-            title: selectedTopic.title,
-            desc,
-            description: selectedTopic.description,
-          }),
-        });
+    //   try {
+    //     const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         id,
+    //         title: selectedTopic.title,
+    //         desc,
+    //         description: selectedTopic.description,
+    //       }),
+    //     });
     
-        if (res.ok) {
-          // Optionally, you can update the state or perform any other actions on success
-        } else {
-          throw new Error("Failed to create a topic");
-        }
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setButtonClicked(false);
-        // Reset the clickedButtonId state after the button is clicked
-        setClickedButtonId(null);
-      }
-    };
+    //     if (res.ok) {
+    //       // Optionally, you can update the state or perform any other actions on success
+    //     } else {
+    //       throw new Error("Failed to create a topic");
+    //     }
+    //   } catch (error) {
+    //     console.log(error);
+    //   } finally {
+    //     setButtonClicked(false);
+    //     // Reset the clickedButtonId state after the button is clicked
+    //     setClickedButtonId(null);
+    //   }
+    // };
     
 
 
@@ -141,7 +141,6 @@
              <div>
              <button
                 className='btn'
-                onClick={() => Work(t._id)}
                 style={{
                   width:"100px",
                   height:"50px",
@@ -152,7 +151,7 @@
                 }}
                 disabled={buttonClicked || clickedButtonIds.includes(t._id)}
               >
-                Ish😄
+                Telegram 
               </button>
              </div>
             </div>
