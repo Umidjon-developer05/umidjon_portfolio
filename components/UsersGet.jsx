@@ -121,7 +121,7 @@
         {topics.topics?.map((t) => (
           <div
             key={t._id}
-            className="card p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
+            className="card p-4 border border-slate-300 my-3  justify-between gap-5 m-3 items-center"
             style={{
               borderRadius: "20px",
               width:"400px",
@@ -133,10 +133,8 @@
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
             </div>
-            <div className=" flex gap-1 items-center">
-            </div>
+           
             <div className="flex gap-2 align-items-center">
-              <div></div>
               <button
                 className='btn'
                 onClick={() => Work(t._id)}
