@@ -50,13 +50,15 @@ export default function AddTopic() {
         />
   
         <input
-          onChange={(e) => setTime(e.target.value)}
-          value={time}
+          onChange={(e) => setDescription(e.target.value)}
+          value={description}
           className="border border-slate-500 px-8 py-2"
           type="text"
           placeholder="Topic Description"
         />
         <input type="time" 
+         onChange={(e) => setTime(e.target.value)}
+         value={time}
           className="border border-slate-500 px-8 py-2"
           placeholder="Time"
         />
