@@ -8,6 +8,8 @@ export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [time, setTime] = useState("");
+  const [time1, setTime1] = useState("");
+  
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -15,7 +17,7 @@ export default function AddTopic() {
     const handleSubmit = async (e) => {
       e.preventDefault();
   
-      if (!title || !description || !time ) {
+      if (!title || !description || !time || !time1 ) {
         alert("Title and description are required.");
         return;
       }
@@ -26,7 +28,7 @@ export default function AddTopic() {
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({ title, description ,time}),
+          body: JSON.stringify({ title, description ,time,time1,time2,time3}),
         });
   
         if (res.ok) {
@@ -62,7 +64,13 @@ export default function AddTopic() {
           className="border border-slate-500 px-8 py-2"
           placeholder="Time"
         />
-      
+        <input type="number" 
+         onChange={(e) => setTime1(e.target.value)}
+             value={time1}
+          className="border border-slate-500 px-8 py-2"
+          placeholder="Soat..."
+        />
+
         <button
           type="submit"
           className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
