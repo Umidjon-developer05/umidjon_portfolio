@@ -80,11 +80,12 @@ const UsersGet = () => {
 
 
 
+  const [countdown, setCountdown] = useState(0);
+  
   const convertTimeToSeconds = (hours, minutes, seconds) => {
-    return hours * 3600 + minutes * 60 + seconds;
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
   };
 
-  const [countdown, setCountdown] = useState(0);
   useEffect(() => {
     // Calculate total seconds from time1, time2, and time3 for each topic
     topics.topics?.forEach((t) => {
@@ -105,14 +106,7 @@ const UsersGet = () => {
   
  
 
-  // Format seconds to display as HH:MM:SS
-  const formatTime = (seconds) => {
-    // const hours = Math.floor(seconds / 3600);
-    // const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds ;
 
-    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
-  };
   
   useEffect(() => {
     localStorage.setItem('clickedButtonIds', JSON.stringify(clickedButtonIds));
@@ -135,7 +129,7 @@ const UsersGet = () => {
             <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
           </div>
           <div className=" flex gap-1 items-center">
-            <div>{formatTime(countdown)} </div>
+            <div>{convertTimeToSeconds(countdown)} </div>
             
           </div>
           <div className="flex gap-2 align-items-center">
