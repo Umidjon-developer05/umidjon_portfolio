@@ -128,7 +128,10 @@ import "./UsersGet.css"
             style={{
               borderRadius: "20px",
               width:"400px",
-              height:"400px"
+              height:"400px",
+              WebkitBoxShadow: '-8px 16px 27px 15px rgba(34,34,NaN,1)' ,
+              MozBoxShadow: '-8px 16px 27px 15px rgba(34,34,NaN,1)' ,
+              boxShadow: '-8px 16px 27px 15px rgba(34,34,NaN,1) ',
             }}
           >
             <div style={{display:"flex",flexDirection:"column",overflow: "auto",height:"300px"}} >
