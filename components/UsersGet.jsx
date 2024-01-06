@@ -105,9 +105,9 @@
 
     // Format seconds to display as HH:MM:SS
     const formatTime = (seconds) => {
-      const hours = Math.floor(seconds / 3600);
-      const minutes = Math.floor((seconds % 3600) / 60);
-      const remainingSeconds = seconds % 60;
+      const hours = seconds;
+      const minutes = seconds;
+      const remainingSeconds = seconds;
 
       return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     };
@@ -133,9 +133,7 @@
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
             </div>
             <div className=" flex gap-1 items-center">
-            <div>{formatTime(convertTimeToSeconds(t.time1, t.time2, t.time3))}</div>
-
-              
+              <div>{formatTime(convertTimeToSeconds)} </div>
             </div>
             <div className="flex gap-2 align-items-center">
               <div></div>
