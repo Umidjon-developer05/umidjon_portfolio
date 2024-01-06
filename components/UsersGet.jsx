@@ -140,7 +140,8 @@
                 className='btn'
                 onClick={() => Work(t._id)}
                 style={{
-                  padding: "10px",
+                  width:"100px",
+                  height:"50px",
                   borderRadius: "20px",
                   color: "#fff",
                   backgroundColor: clickedButtonIds.includes(t._id) ? 'gray' : 
