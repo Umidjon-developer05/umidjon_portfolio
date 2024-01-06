@@ -151,7 +151,7 @@
                   backgroundColor: clickedButtonIds.includes(t._id) ? 'gray' : 
                     (clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red' : 'green'),
                 }}
-                disabled={buttonClicked || clickedButtonIds.includes(t._id)}
+                
               >
                 Telegram 
               </button>
