@@ -134,7 +134,7 @@
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
             </div>
            
-            <div className="flex gap-2 justify-end items-end">
+            <div className="flex gap-2 justify-end items-end" style={{height:"100%"}}>
               <button
                 className='btn'
                 onClick={() => Work(t._id)}
