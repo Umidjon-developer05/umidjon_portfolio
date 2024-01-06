@@ -136,7 +136,7 @@ import "./UsersGet.css"
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
             </div>
            
-            <div className="flex gap-2 justify-between " style={{alignItems:"end"}}>
+            <div className="flex gap-2 justify-between " style={{alignItems:"end",height:"100%"}}>
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
              <div>
              <a href="https://t.me/Umidjon01_developer">
@@ -148,10 +148,7 @@ import "./UsersGet.css"
                   borderRadius: "20px",
                   cursor:"pointer",
                   color: "#fff",
-                  backgroundColor: clickedButtonIds.includes(t._id) ? 'gray' : 
-                    (clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red' : 'green'),
-                }}
-                
+                  backgroundColor: 'gray' }} 
               >
                 Telegram 
               </button>
