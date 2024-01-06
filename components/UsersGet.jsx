@@ -128,7 +128,7 @@
               height:"300px"
             }}
           >
-            <div style={{display:"flex",flexDirection:"column",overflow: "auto"}} >
+            <div style={{display:"flex",flexDirection:"column",overflow: "auto",height:"100px"}} >
               <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.title}</h2>
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
             </div>
