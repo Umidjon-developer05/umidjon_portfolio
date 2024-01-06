@@ -1,166 +1,164 @@
-import React, { useEffect, useState } from 'react';
+  import React, { useEffect, useState } from 'react';
 
-const UsersGet = () => {
-  const [topics, setTopics] = useState([]);
-  const [title, setTitle] = useState('');
-  const [desc, setDesc] = useState('');
-  const [clickedButtonId, setClickedButtonId] = useState(null);
-  const [buttonClicked, setButtonClicked] = useState(false);
-  const [clickedButtonIds, setClickedButtonIds] = useState(
-    JSON.parse(localStorage.getItem('clickedButtonIds')) || []
-  );
+  const UsersGet = () => {
+    const [topics, setTopics] = useState([]);
+    const [title, setTitle] = useState('');
+    const [desc, setDesc] = useState('');
+    const [clickedButtonId, setClickedButtonId] = useState(null);
+    const [buttonClicked, setButtonClicked] = useState(false);
+    const [clickedButtonIds, setClickedButtonIds] = useState(
+      JSON.parse(localStorage.getItem('clickedButtonIds')) || []
+    );
 
-  useEffect(() => {
-    const UserData = async () => {
+    useEffect(() => {
+      const UserData = async () => {
+        try {
+          const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/topics", {
+            cache: "no-store",
+          });
+
+          if (!res.ok) {
+            throw new Error("Failed to fetch topics");
+          }
+
+          const topicsData = await res.json();
+          setTopics(topicsData);
+        } catch (error) {
+          console.log("Error loading topics: ", error);
+        }
+      };
+
+      UserData();
+    }, []);
+
+    // ... (rest of your code remains unchanged)
+
+    const Work = async (id) => {
+      if (buttonClicked || clickedButtonIds.includes(id)) {
+        // Button already clicked or request already sent, do nothing
+        return;
+      }
+
+      setButtonClicked(true);
+
+      const selectedTopic = topics.topics?.find((t) => t._id === id);
+      if (!selectedTopic) {
+        console.error("Selected topic not found");
+        return;
+      }
+
+      setClickedButtonIds((prevIds) => [...prevIds, id]);
+      setTitle(selectedTopic.title);
+      setDesc('ish bajarildi😁');
+      setClickedButtonId(id);
+
       try {
-        const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/topics", {
-          cache: "no-store",
+        const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            id,
+            title: selectedTopic.title,
+            desc,
+            description: selectedTopic.description,
+          }),
         });
 
-        if (!res.ok) {
-          throw new Error("Failed to fetch topics");
+        if (res.ok) {
+          // Optionally, you can update the state or perform any other actions on success
+        } else {
+          throw new Error("Failed to create a topic");
         }
-
-        const topicsData = await res.json();
-        setTopics(topicsData);
       } catch (error) {
-        console.log("Error loading topics: ", error);
+        console.log(error);
+      } finally {
+        setButtonClicked(false);
       }
     };
 
-    UserData();
-  }, []);
 
-  // ... (rest of your code remains unchanged)
 
-  const Work = async (id) => {
-    if (buttonClicked || clickedButtonIds.includes(id)) {
-      // Button already clicked or request already sent, do nothing
-      return;
-    }
+    const [countdown, setCountdown] = useState(0);
+    const convertTimeToSeconds = (hours, minutes, seconds) => {
+      return hours * 3600 + minutes * 60 + seconds;
+    };
 
-    setButtonClicked(true);
-
-    const selectedTopic = topics.topics?.find((t) => t._id === id);
-    if (!selectedTopic) {
-      console.error("Selected topic not found");
-      return;
-    }
-
-    setClickedButtonIds((prevIds) => [...prevIds, id]);
-    setTitle(selectedTopic.title);
-    setDesc('ish bajarildi😁');
-    setClickedButtonId(id);
-
-    try {
-      const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          id,
-          title: selectedTopic.title,
-          desc,
-          description: selectedTopic.description,
-        }),
+    useEffect(() => {
+      let totalSeconds = 0;
+      topics.topics?.forEach((t) => {
+        const seconds = convertTimeToSeconds(t.time1, t.time2, t.time3);
+        totalSeconds += seconds;
       });
+    
+      setCountdown(totalSeconds);
+    
+      const interval = setInterval(() => {
+        setCountdown((prevCountdown) => prevCountdown - 1);
+      }, 1000);
+    
+      return () => clearInterval(interval);
+    }, [topics]);
+    
+  
 
-      if (res.ok) {
-        // Optionally, you can update the state or perform any other actions on success
-      } else {
-        throw new Error("Failed to create a topic");
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setButtonClicked(false);
-    }
+    // Format seconds to display as HH:MM:SS
+    const formatTime = (seconds) => {
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      const remainingSeconds = seconds % 60;
+
+      return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    };
+    
+    useEffect(() => {
+      localStorage.setItem('clickedButtonIds', JSON.stringify(clickedButtonIds));
+    }, [clickedButtonIds]);
+
+    return (
+      <div style={{ width: "100%" }}>
+        {topics.topics?.map((t) => (
+          <div
+            key={t._id}
+            className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
+            style={{
+              borderRadius: "20px",
+              
+            }}
+          >
+            <div>
+              <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.title}</h2>
+              <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
+              <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
+            </div>
+            <div className=" flex gap-1 items-center">
+              <div>{formatTime(countdown)} </div>
+              
+            </div>
+            <div className="flex gap-2 align-items-center">
+              <div></div>
+              <button
+                className='btn'
+                onClick={() => Work(t._id)}
+                style={{
+                  padding: "10px",
+                  borderRadius: "20px",
+                  color: "#fff",
+                  backgroundColor: clickedButtonIds.includes(t._id) ? 'gray' : 
+                    (clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red' : 'green'),
+                }}
+                disabled={buttonClicked || clickedButtonIds.includes(t._id)}
+              >
+                Ish😄
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   };
 
 
 
-  const [countdown, setCountdown] = useState(0);
-  const convertTimeToSeconds = (hours, minutes, seconds) => {
-    return hours * 3600 + minutes * 60 + seconds;
-  };
-
-  useEffect(() => {
-    // Calculate total seconds from time1, time2, and time3 for each topic
-    topics.topics?.forEach((t) => {
-      const totalSeconds = convertTimeToSeconds(t.time1, t.time2, t.time3);
-  
-      // Set countdown to total seconds
-      setCountdown((prevCountdown) => prevCountdown + totalSeconds);
-    });
-  
-    // Create an interval to update countdown every second
-    const interval = setInterval(() => {
-      setCountdown((prevCountdown) => prevCountdown - 1);
-    }, 1000);
-  
-    // Clear the interval when the component unmounts or when countdown reaches zero
-    return () => clearInterval(interval);
-  }, [topics]);
-  
- 
-
-  // Format seconds to display as HH:MM:SS
-  const formatTime = (seconds) => {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
-
-    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
-  };
-  
-  useEffect(() => {
-    localStorage.setItem('clickedButtonIds', JSON.stringify(clickedButtonIds));
-  }, [clickedButtonIds]);
-
-  return (
-    <div style={{ width: "100%" }}>
-      {topics.topics?.map((t) => (
-        <div
-          key={t._id}
-          className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-center"
-          style={{
-            borderRadius: "20px",
-            
-          }}
-        >
-          <div>
-            <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.title}</h2>
-            <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
-            <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
-          </div>
-          <div className=" flex gap-1 items-center">
-            <div>{formatTime(countdown)} </div>
-            
-          </div>
-          <div className="flex gap-2 align-items-center">
-            <div></div>
-            <button
-              className='btn'
-              onClick={() => Work(t._id)}
-              style={{
-                padding: "10px",
-                borderRadius: "20px",
-                color: "#fff",
-                backgroundColor: clickedButtonIds.includes(t._id) ? 'gray' : 
-                  (clickedButtonId === t._id && desc === 'ish bajarildi😁' ? 'red' : 'green'),
-              }}
-              disabled={buttonClicked || clickedButtonIds.includes(t._id)}
-            >
-              Ish😄
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-
-
-export default UsersGet;
+  export default UsersGet;
