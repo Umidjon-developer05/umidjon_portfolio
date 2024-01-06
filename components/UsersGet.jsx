@@ -117,7 +117,7 @@
     }, [clickedButtonIds]);
 
     return (
-      <div style={{ width: "100%",display:"flex" , margin:"0 auto" , flexWrap:"wrap"}}>
+      <div style={{ width: "100%",display:"flex" ,justifyContent:"center", margin:"0 auto" , flexWrap:"wrap"}}>
         {topics.topics?.map((t) => (
           <div
             key={t._id}
@@ -128,7 +128,7 @@
               height:"300px"
             }}
           >
-            <div style={{display:"flex",flexDirection:"column"}} >
+            <div style={{display:"flex",flexDirection:"column",overflow: "auto"}} >
               <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.title}</h2>
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
             </div>
