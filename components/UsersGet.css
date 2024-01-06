@@ -1,7 +1,7 @@
 .btn{
     transition: 1s all;
 }
-.main{
+.main1{
     -webkit-box-shadow: -8px 16px 27px 15px rgba(34,34,NaN,1) !important;
     -moz-box-shadow: -8px 16px 27px 15px rgba(34,34,NaN,1) !important;
     box-shadow: -8px 16px 27px 15px rgba(34,34,NaN,1) !important;
