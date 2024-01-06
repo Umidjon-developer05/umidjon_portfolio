@@ -7,6 +7,7 @@ import Xato from "@/components/Xato";
 export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [time, setTime] = useState("");
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -25,7 +26,7 @@ export default function AddTopic() {
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({ title, description }),
+          body: JSON.stringify({ title, description ,time}),
         });
   
         if (res.ok) {
@@ -49,13 +50,16 @@ export default function AddTopic() {
         />
   
         <input
-          onChange={(e) => setDescription(e.target.value)}
-          value={description}
+          onChange={(e) => setTime(e.target.value)}
+          value={time}
           className="border border-slate-500 px-8 py-2"
           type="text"
           placeholder="Topic Description"
         />
-  
+        <input type="time" 
+          className="border border-slate-500 px-8 py-2"
+          placeholder="Time"
+        />
         <button
           type="submit"
           className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
