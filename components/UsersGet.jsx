@@ -128,13 +128,13 @@
               height:"300px"
             }}
           >
-            <div>
+            <div className='flex justify-center'>
               <h2 className="font-bold text-2xl" style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.title}</h2>
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.description}</div>
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
             </div>
            
-            <div className="flex gap-2 align-items-center">
+            <div className="flex gap-2 justify-end items-end">
               <button
                 className='btn'
                 onClick={() => Work(t._id)}
