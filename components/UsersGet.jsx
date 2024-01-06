@@ -133,7 +133,7 @@
               <div style={{color: clickedButtonId === t._id && desc === 'ish bajarildi😁' ?'#222':'#222'}}>{t.time}</div>
             </div>
             <div className=" flex gap-1 items-center">
-              <div>{formatTime(convertTimeToSeconds)} </div>
+              <div>{formatTime(countdown)} </div>
             </div>
             <div className="flex gap-2 align-items-center">
               <div></div>
