@@ -54,7 +54,7 @@ export default function AddTopic() {
   
         <input
           onChange={(e) => setDescription(e.target.value)}
-          value={time}
+          value={description}
           className="border border-slate-500 px-8 py-2"
           type="text"
           placeholder="Topic Description"
