@@ -67,19 +67,19 @@ export default function AddTopic() {
         />
         <input type="number" 
          onChange={(e) => setTime1(e.target.value)}
-             value={time}
+             value={time1}
           className="border border-slate-500 px-8 py-2"
           placeholder="Soat..."
         />
         <input type="number" 
          onChange={(e) => setTime2(e.target.value)}
-             value={time}
+             value={time2}
           className="border border-slate-500 px-8 py-2"
           placeholder="Minut...."
         />
         <input type="number" 
          onChange={(e) => setTime3(e.target.value)}
-             value={time}
+             value={time3}
           className="border border-slate-500 px-8 py-2"
           placeholder="seckund..."
         />
