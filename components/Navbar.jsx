@@ -28,7 +28,8 @@ export default function Navbar() {
         <div ><img src={session.data?.user.image}  style={{backgroundColor:"red",width:"50px",height:"50px",borderRadius:"50%"}}/></div>
         :<Link className="bg-white p-2" href={"/SingIn"}>
         Sing In 
-      </Link>}
+      </Link>
+      }
     </nav>
     </div>
   );
