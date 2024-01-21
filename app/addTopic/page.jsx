@@ -28,7 +28,7 @@ export default function AddTopic() {
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({ title, description ,time,time1,time2,time3}),
+          body: JSON.stringify({ title, description ,time,time1}),
         });
   
         if (res.ok) {
