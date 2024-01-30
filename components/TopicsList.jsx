@@ -20,7 +20,7 @@ const TopicsList = () => {
   useEffect(() => {
     const fetchTopicsData = async () => {
       try {
-        const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/topics", {
+        const res = await fetch("http://localhost:3000/api/topics", {
           cache: "no-store",
         });
 
@@ -42,7 +42,7 @@ const TopicsList = () => {
   useEffect(() => {
     const UserData = async () => {
       try {
-        const res = await fetch("https://todo-list-beta-lovat-20.vercel.app/api/button", {
+        const res = await fetch("http://localhost:3000/api/button", {
           cache: "no-store",
         });
 
