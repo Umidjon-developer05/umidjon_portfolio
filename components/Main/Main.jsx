@@ -60,7 +60,7 @@ const Main = () => {
   return (
     <div className='w-full border h-[700px]' >
       {banner.map((item, index) => (
-        <div key={index} style={{ backgroundImage: `url(${item?.image?.url})`, width: "100%", height: "100%", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+        <div key={index} style={{ backgroundImage: `'url(${item?.image?.url})'`, width: "100%", height: "100%", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
           <div className='flex h-[100%] flex-col justify-center items-center' data-aos="zoom-in-down">
             <h1 className='text-[35px] text-slate-950 ' style={{ fontWeight: "600" }}>{item?.firstName}</h1>
             <div className='flex gap-5'>

@@ -357,10 +357,6 @@
     }
   },
   "entryCSSFiles": {
-    "C:\\Users\\Hp Victus\\Desktop\\CRUD_MongoDB-main\\app\\layout": {
-      "modules": [],
-      "files": []
-    },
     "C:\\Users\\Hp Victus\\Desktop\\CRUD_MongoDB-main\\app\\page": {
       "modules": [
         "C:\\Users\\Hp Victus\\Desktop\\CRUD_MongoDB-main\\components\\UsersGet.css"
@@ -368,6 +364,10 @@
       "files": [
         "static/css/app/page.css"
       ]
+    },
+    "C:\\Users\\Hp Victus\\Desktop\\CRUD_MongoDB-main\\app\\layout": {
+      "modules": [],
+      "files": []
     },
     "C:\\Users\\Hp Victus\\Desktop\\CRUD_MongoDB-main\\app\\addTopic\\page": {
       "modules": [],
