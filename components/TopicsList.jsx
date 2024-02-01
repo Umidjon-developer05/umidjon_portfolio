@@ -6,7 +6,6 @@ import { HiPencilAlt } from "react-icons/hi";
 import { useSession } from "next-auth/react";
 import UsersGet from "./UsersGet";
 import RemoveBtn1 from "./RemoveBtn1";
-import Xato from "./Xato";
 import Main from "./Main/Main";
 import AOS from 'aos';
 

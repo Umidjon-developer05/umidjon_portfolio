@@ -375,7 +375,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/addTopic/page:static/chunks/app/addTopic/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -383,7 +383,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/addTopic/page:static/chunks/app/addTopic/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -407,7 +407,7 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/addTopic/page:static/chunks/app/addTopic/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -415,7 +415,7 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/addTopic/page:static/chunks/app/addTopic/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },

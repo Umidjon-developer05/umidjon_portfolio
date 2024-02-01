@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import Xato from "@/components/Xato";
 export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -79,11 +78,5 @@ export default function AddTopic() {
         </button>
       </form>
     );
-  }else{
-    return(
-      <div>
-        <Xato/>
-      </div>
-    )
   }
 }
