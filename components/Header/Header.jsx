@@ -12,6 +12,7 @@ const Header = () => {
        <Image 
         src={'/img.jpg'}
         width={1000}
+        alt='assa'
         height={1000}
         style={{borderRadius:"50%",height:"100%"}}
         />
