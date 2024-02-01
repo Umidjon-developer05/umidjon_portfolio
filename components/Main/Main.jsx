@@ -38,7 +38,6 @@ const Main = () => {
     };
   }, []); // Empty dependency array to run only once on mount
 
- useEffect(()=>{
   let animationInterval;
 
   const animateText = () => {
@@ -57,7 +56,6 @@ const Main = () => {
       currentIndex++;
     }, bannerD.length * 1000); // Adjust the total animation duration as needed
   };
- },[])
 
   return (
     <div className='w-full border h-[700px]' >
