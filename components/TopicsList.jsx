@@ -7,15 +7,15 @@ import { useSession } from "next-auth/react";
 import UsersGet from "./UsersGet";
 import RemoveBtn1 from "./RemoveBtn1";
 import Xato from "./Xato";
-
-// Other imports...
-// Other imports...
+import Main from "./Main/Main";
+import AOS from 'aos';
 
 const TopicsList = () => {
   const { data: session, status } = useSession();
   const [topics, setTopics] = useState([]);
   const [Button, setButton] = useState([]);
   const [loading, setLoading] = useState(true);
+  AOS.init();
 
   useEffect(() => {
     const fetchTopicsData = async () => {
@@ -64,18 +64,20 @@ const TopicsList = () => {
   }
   console.log(Button);
 
-  if (!session?.user?.email) {
-    return <Xato/>;
-  }
+  
   if (session?.user?.email === process.env.NEXT_PUBLIC_EMAIL) {
     return (
       <>
-      <div style={{ overflowY:"auto",height:"500px"}}>{
+      <div style={{ overflowY:"auto",height:"500px"}}
+      
+      >{
           topics.topics?.map((t) => (
             <div
               key={t._id}
-              className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-start"
+              className="p-4 border border-slate-300  my-3 flex justify-between gap-5 m-3 items-start"
               style={{ borderRadius: "20px"}}
+             
+              data-aos="zoom-out-down"
             >
               <div>
                 <h2 className="font-bold text-2xl">{t.title}</h2>
@@ -117,7 +119,8 @@ const TopicsList = () => {
     );
   }else{
     return(
-      <div style={{display:"flex",justifyContent:"center"}}>
+      <div style={{display:"flex",flexDirection:"column",justifyContent:"center"}} className=" sm:ml-72">
+         <Main/>
         <UsersGet/>
       </div>
     )

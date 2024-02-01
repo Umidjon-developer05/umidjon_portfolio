@@ -22,15 +22,12 @@ export default function Navbar() {
     }
   }, [session]);
   return (
-    <div>
-      <nav className="flex justify-between items-center bg-slate-800 px-8 py-3 ">
-      <Link className="text-white font-bold" href={"/"}>
-          Umidjon
-      </Link>
+    <div className="flex   w-full justify-end" >
+      <nav className="flex justify-between   px-8 py-3  ">
       {
          email === process.env.NEXT_PUBLIC_EMAIL ?
-         <Link className="bg-white p-2" href={`${email === process.env.NEXT_PUBLIC_EMAIL?'/addTopic':'/'}`}>
-            Add Topic
+         <Link className= "p-2" href={`${email === process.env.NEXT_PUBLIC_EMAIL?'/addTopic':'/'}`}>
+            <Button>Add Topic</Button>
           </Link>
             : <div></div>
       }
@@ -81,7 +78,7 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute right-0 z-10 mt-10 m-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <a
