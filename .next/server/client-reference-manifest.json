@@ -151,14 +151,6 @@
         "chunks": [],
         "async": false
       }
-    },
-    "(app-client)/./app/addTopic/page.jsx": {
-      "*": {
-        "id": "(sc_client)/./app/addTopic/page.jsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
     }
   },
   "edgeSSRModuleMapping": {},
@@ -442,14 +434,6 @@
         "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
-    },
-    "C:\\Users\\Hp Victus\\Desktop\\CRUD_MongoDB-main\\app\\addTopic\\page.jsx": {
-      "id": "(app-client)/./app/addTopic/page.jsx",
-      "name": "*",
-      "chunks": [
-        "app/addTopic/page:static/chunks/app/addTopic/page.js"
-      ],
-      "async": false
     }
   },
   "entryCSSFiles": {
@@ -470,10 +454,6 @@
       "files": [
         "static/css/app/layout.css"
       ]
-    },
-    "C:\\Users\\Hp Victus\\Desktop\\CRUD_MongoDB-main\\app\\addTopic\\page": {
-      "modules": [],
-      "files": []
     }
   }
 }

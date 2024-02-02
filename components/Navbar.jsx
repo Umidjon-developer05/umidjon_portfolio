@@ -12,7 +12,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+
 import Image from "next/image";
+
 export default function Navbar() {
   const session = useSession();
   const { setTheme } = useTheme()
@@ -59,10 +61,9 @@ export default function Navbar() {
                     <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">Open user menu</span>
-                    <Image
+                    <img
                       className="h-8 w-8 rounded-full"
                       src={session?.data?.user?.image}
-                      
                       alt="user"
                     />
                   </Menu.Button> 

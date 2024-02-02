@@ -2,7 +2,6 @@ import Image from 'next/image';
 import React from 'react'
 
 const MainD = ({item}) => {
-    console.log(item);
   return (
     <div className='flex  gap-4 items-center '>
         {

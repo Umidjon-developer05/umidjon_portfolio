@@ -4,10 +4,7 @@ import React, { useEffect, useState } from 'react'
 import MainD from './MainD';
 import { Button } from '../ui/button';
 
-// Assuming that item?.image?.url is a valid URL
-// ... (your existing code)
 
-// ... (your existing code)
 
 const Main = () => {
   const [banner, setBanner] = useState([]);
@@ -60,21 +57,26 @@ const Main = () => {
   return (
     <div className='w-full border h-[700px]' >
       {banner.map((item, index) => (
-        <div key={index} style={{ backgroundImage: `'url(${item?.image?.url})'`, width: "100%", height: "100%", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+      <>
+        <div key={index} style={{ backgroundImage: 'url(/coder.webp)', width: "100%", height: "100%", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} className='hover:opacity-100'> 
+          <div className='opacity-100 flex items-center justify-center h-[100%]'>
           <div className='flex h-[100%] flex-col justify-center items-center' data-aos="zoom-in-down">
-            <h1 className='text-[35px] text-slate-950 ' style={{ fontWeight: "600" }}>{item?.firstName}</h1>
-            <div className='flex gap-5'>
-              <h1 className='text-[35px] text-slate-950 '>I'm a </h1>
-              <h1 className='text-[35px] text-slate-950'>{displayedText}</h1>
+            <h1 className='text-[35px] text-slate-950    opacity-100' style={{ fontWeight: "600" }}>{item?.firstName}</h1>
+            <div className='flex gap-5  opacity-100'>
+              <h1 className='text-[30px] text-slate-950   opacity-100'>I'm a </h1>
+              <h1 className={`text-[30px] text-slate-950  opacity-100 `}>{displayedText}</h1>
             </div>
-            <div className='mb-10'>
+            <div className='mb-10  opacity-100'>
               <MainD item={item?.programing} />
             </div>
             <div> 
               <Button className=' w-32 p-6 btn rounded-lg hover:w-36   text-white' style={{transition:'2s all'}}>Contact</Button>
             </div>
           </div>
+          </div>
         </div>
+        
+      </>
       ))}
     </div>
   );

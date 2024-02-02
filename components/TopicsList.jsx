@@ -14,7 +14,6 @@ const TopicsList = () => {
   const [topics, setTopics] = useState([]);
   const [Button, setButton] = useState([]);
   const [loading, setLoading] = useState(true);
-  AOS.init();
 
   useEffect(() => {
     const fetchTopicsData = async () => {
@@ -118,7 +117,7 @@ const TopicsList = () => {
     );
   }else{
     return(
-      <div style={{display:"flex",flexDirection:"column",justifyContent:"center"}} className=" sm:ml-72">
+      <div style={{display:"flex",flexDirection:"column",justifyContent:"center"}} >
          <Main/>
         <UsersGet/>
       </div>
