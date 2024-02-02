@@ -18,6 +18,12 @@ export default function RootLayout({ children }) {
         duration: 800,
         once: false,
       });
+    }else{
+      return (
+        <>
+          hello 
+        </>
+      )
     }
   }, []);
 
