@@ -6,7 +6,6 @@ const topicSchema = new Schema(
     description: String,
     time:String,
     time1:String,
-
   },
   {
     timestamps: true,

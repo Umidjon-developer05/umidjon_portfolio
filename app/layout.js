@@ -9,6 +9,8 @@ import AuthProvider from "@/components/AuthProvider/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/Header/Header";
+import About from "./About/page";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -32,28 +34,29 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AuthProvider>
           <div className="max-w-10xl mx-auto ">
+              <div>
+                <div className="flex">
+                  <div className="flex">
+                    <div>
+                    </div>
+                    <div></div>
+                  </div>
+                  <div className="w-full">
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
               enableSystem
               disableTransitionOnChange
             >
-              <div>
-                <div className="flex">
-                  <div className="flex">
-                    <div>
-                      <Header />
-                    </div>
-                    <div></div>
-                  </div>
-                  <div className="w-full">
+                    <Header />
                     <Navbar />
                     {children}
+                    <Toaster />
+            </ThemeProvider>
                   </div>
                 </div>
                 <div></div>
               </div>
-            </ThemeProvider>
           </div>
         </AuthProvider>
       </body>

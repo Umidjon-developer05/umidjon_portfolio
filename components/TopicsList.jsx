@@ -6,15 +6,16 @@ import { HiPencilAlt } from "react-icons/hi";
 import { useSession } from "next-auth/react";
 import UsersGet from "./UsersGet";
 import RemoveBtn1 from "./RemoveBtn1";
-import Main from "./Main/Main";
-import AOS from 'aos';
+import GlobalsApi from "@/app/_utils/GlobalsApi";
+
+
 
 const TopicsList = () => {
   const { data: session, status } = useSession();
   const [topics, setTopics] = useState([]);
   const [Button, setButton] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [Portfolio,setPortfolio]= useState([])
   useEffect(() => {
     const fetchTopicsData = async () => {
       try {
@@ -57,11 +58,10 @@ const TopicsList = () => {
 
     UserData();
   }, []);
-  if (status === "loading" || loading) {
-    return <div>Loading...</div>; // Show loading indicator while fetching data
-  }
-  console.log(Button);
-
+  useEffect(async()=>{
+    const resp =  await GlobalsApi.getAllPortfolio();
+    setPortfolio(resp?.portfolios)
+  },[])
   
   if (session?.user?.email === process.env.NEXT_PUBLIC_EMAIL) {
     return (
@@ -118,8 +118,7 @@ const TopicsList = () => {
   }else{
     return(
       <div style={{display:"flex",flexDirection:"column",justifyContent:"center"}} >
-         <Main/>
-        <UsersGet/>
+              <UsersGet  Portfolio={Portfolio}   />
       </div>
     )
   }

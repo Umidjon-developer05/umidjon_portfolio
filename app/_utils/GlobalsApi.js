@@ -25,6 +25,29 @@ const getAllBanner = async ()=>{
     const result = await request(MASTER_URL,query);
     return result;
 }
+const getAllPortfolio = async ()=>{
+    const query =gql`
+    query MyQuery {
+      portfolios {
+        id
+        images {
+          url
+        }
+        title
+        portfoliocom {
+          ... on Portfoliocom {
+            id
+            lanuges
+          }
+        }
+        description
+      }
+    }    
+    `
+    const result = await request(MASTER_URL,query);
+    return result;
+}
 export default { 
-    getAllBanner
+    getAllBanner,
+    getAllPortfolio
 }

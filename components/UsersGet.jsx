@@ -1,100 +1,82 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import "./UsersGet.css"
-  const UsersGet = () => {
-    const [topics, setTopics] = useState([]);
-    const [title, setTitle] = useState('');
-    const [desc, setDesc] = useState('');
-    const [clickedButtonId, setClickedButtonId] = useState(null);
-    const [buttonClicked, setButtonClicked] = useState(false);
-    const [clickedButtonIds, setClickedButtonIds] = useState(
-      JSON.parse(localStorage.getItem('clickedButtonIds')) || []
-    );
-
-    useEffect(() => {
-      const UserData = async () => {
-        try {
-          const res = await fetch("http://localhost:3000/api/topics", {
-            cache: "no-store",
-          });
-
-          if (!res.ok) {
-            throw new Error("Failed to fetch topics");
-          }
-
-          const topicsData = await res.json();
-          setTopics(topicsData);
-        } catch (error) {
-          console.log("Error loading topics: ", error);
-        }
-      };
-
-      UserData();
-    }, []);
-
-   
-    
-
-
-
-    const [countdown, setCountdown] = useState(0);
-    const convertTimeToSeconds = (hours, minutes, seconds) => {
-      return hours * 3600 + minutes * 60 + seconds;
-    };
-
-    useEffect(() => {
-      let totalSeconds = 0;
-      topics.topics?.forEach((t) => {
-        const seconds = convertTimeToSeconds(t.time1, t.time2, t.time3);
-        totalSeconds += seconds;
-      });
-    
-      setCountdown(totalSeconds);
-    
-      const interval = setInterval(() => {
-        setCountdown((prevCountdown) => prevCountdown - 1);
-      }, 1000);
-    
-      return () => clearInterval(interval);
-    }, [topics]);
-    
-  
-
-    // Format seconds to display as HH:MM:SS
-    const formatTime = (seconds) => {
-      const hours = Math.floor(seconds / 3600);
-      const minutes = Math.floor((seconds % 3600) / 60);
-      const remainingSeconds = seconds % 60;
-
-      return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
-    };
-    
-    useEffect(() => {
-      localStorage.setItem('clickedButtonIds', JSON.stringify(clickedButtonIds));
-    }, [clickedButtonIds]);
+import { Card, CardContent } from "@/components/ui/card"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Button } from './ui/button';
+import Image from 'next/image';
+const UsersGet = ({Portfolio}) => {
+    console.log(Portfolio);
+ 
 
     return (
-      <div style={{ width: "100%",display:"flex" ,justifyContent:"center", margin:"0 auto" , flexWrap:"wrap"}}>
-        {topics?.topics?.map((t) => (
-          <div
-            key={t._id} 
-            className="p-4 border my-3 m-3  "
-            style={{
-              borderRadius: "20px",
-              width:"400px",
-              height:"400px",
-           
-            }}
-          >
-            <div style={{display:"flex",flexDirection:"column",overflow: "auto",height:"300px"}} >
-              <h2 className="font-bold text-2xl" >{t.title}</h2>
-              <div >{t.description}</div>
-            </div>
-          </div>
-        ))}
+        <div className="container mx-auto">
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full mt-24"
+        >
+          <CarouselContent className="flex">
+            {Portfolio?.map((t, index) => (
+              <CarouselItem
+                key={index}
+                className="pl-3  md:basis-1/2 lg:basis-1/3 cursor-pointer"
+              >
+                <div className="pl-1">
+                  <Card>
+                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                        <Image src={t?.images?.url} alt='sa' width={1000} height={1000}/>
+                    </CardContent>
+                    <span className="text-2xl pl-2 pr-2 font-semibold">
+                      {t?.title}
+                    </span>
+                    <h1 className="col-span-2 pl-2 pr-2 font-semibold">
+                      {t?.description}
+                    </h1>
+                    <div className='flex justify-end p-4'>
+                      <Dialog>
+                        <DialogTrigger>
+                          <Button
+                            variant="outline"
+                            onClick={() => (index)}
+                          >
+                            Open
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>{t?.title} </DialogTitle>
+                            <DialogDescription>{t?.description}</DialogDescription>
+                          </DialogHeader>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className='z-30'  />
+         <CarouselNext   />
+
+        </Carousel>
       </div>
     );
-  };
+};
 
-
-
-  export default UsersGet;
+export default UsersGet;
