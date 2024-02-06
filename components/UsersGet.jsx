@@ -20,7 +20,6 @@ import {
 import { Button } from './ui/button';
 import Image from 'next/image';
 const UsersGet = ({Portfolio}) => {
-    console.log(Portfolio);
  
 
     return (
@@ -48,7 +47,7 @@ const UsersGet = ({Portfolio}) => {
                     <h1 className="col-span-2 pl-2 pr-2 font-semibold">
                       {t?.description}
                     </h1>
-                    <div className='flex justify-end p-4'>
+                    <div className='flex justify-end p-4 w-full'>
                       <Dialog>
                         <DialogTrigger>
                           <Button
@@ -58,10 +57,16 @@ const UsersGet = ({Portfolio}) => {
                             Open
                           </Button>
                         </DialogTrigger>
-                        <DialogContent>
+                        <DialogContent className='sm:max-w-[1400px] sm:h-[500px] flex  items-center   ' >
                           <DialogHeader>
-                            <DialogTitle>{t?.title} </DialogTitle>
-                            <DialogDescription>{t?.description}</DialogDescription>
+                           <div className='flex gap-5 flex-wrap '>
+                          <div>
+                           <Image src={t?.images?.url} alt='sa' width={500} height={1000} className='sm:max-w-[800px]:'/>
+                          </div>
+                          <div>
+                             <DialogTitle className='text-sm'>{t?.title} </DialogTitle>
+                          </div>
+                           </div>
                           </DialogHeader>
                         </DialogContent>
                       </Dialog>
@@ -73,7 +78,6 @@ const UsersGet = ({Portfolio}) => {
           </CarouselContent>
           <CarouselPrevious className='z-30'  />
          <CarouselNext   />
-
         </Carousel>
       </div>
     );

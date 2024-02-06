@@ -5,7 +5,6 @@ import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import { useSession } from "next-auth/react";
 import UsersGet from "./UsersGet";
-import RemoveBtn1 from "./RemoveBtn1";
 import GlobalsApi from "@/app/_utils/GlobalsApi";
 
 
@@ -13,54 +12,37 @@ import GlobalsApi from "@/app/_utils/GlobalsApi";
 const TopicsList = () => {
   const { data: session, status } = useSession();
   const [topics, setTopics] = useState([]);
-  const [Button, setButton] = useState([]);
   const [loading, setLoading] = useState(true);
   const [Portfolio,setPortfolio]= useState([])
-  useEffect(() => {
-    const fetchTopicsData = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/api/topics", {
-          cache: "no-store",
-        });
+  const fetchTopicsData = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/api/topics", {
+        cache: "no-store",
+      });
 
-        if (!res.ok) {
-          throw new Error("Failed to fetch topics");
-        }
-
-        const topicsData = await res.json();
-        setTopics(topicsData);
-        setLoading(false); // Set loading to false once data is fetched
-      } catch (error) {
-        console.log("Error loading topics: ", error);
-        setLoading(false); // Set loading to false in case of an error
+      if (!res.ok) {
+        throw new Error("Failed to fetch topics");
       }
-    };
+
+      const topicsData = await res.json();
+      setTopics(topicsData);
+      setLoading(false); // Set loading to false once data is fetched
+    } catch (error) {
+      console.log("Error loading topics: ", error);
+      setLoading(false); // Set loading to false in case of an error
+    }
+  };
+  useEffect(() => {
 
     fetchTopicsData();
   }, []); // Empty dependency array ensures the effect runs only once on mount
-  useEffect(() => {
-    const UserData = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/api/button", {
-          cache: "no-store",
-        });
 
-        if (!res.ok) {
-          throw new Error("Failed to fetch topics");
-        }
-
-        const ButtonData = await res.json();
-        setButton(ButtonData);
-      } catch (error) {
-        console.log("Error loading topics: ", error);
-      }
-    };
-
-    UserData();
-  }, []);
-  useEffect(async()=>{
+  async function  GetALLN()  {
     const resp =  await GlobalsApi.getAllPortfolio();
-    setPortfolio(resp?.portfolios)
+     setPortfolio(resp?.portfolios)
+  }
+  useEffect(()=>{
+    GetALLN()
   },[])
   
   if (session?.user?.email === process.env.NEXT_PUBLIC_EMAIL) {
@@ -92,27 +74,7 @@ const TopicsList = () => {
       }
       
       </div>
-      <div>
-        <h1 style={{textAlign:"center",fontSize:"20px"}}>Ish status</h1>
-        {
-          Button?.button?.map((item)=>
-          <div
-              key={item._id}
-              className="p-4 border border-slate-300 my-3 flex justify-between gap-5 m-3 items-start"
-              style={{ borderRadius: "20px"}}
-            >
-              <div>
-                <h2 className="font-bold text-2xl">{item.title}</h2>
-                <div>{item.desc ? item.desc :'ish bajarildi😁'}</div>
-              </div>
-  
-              <div className="flex gap-2 align-items-center">
-                <RemoveBtn1 id={item._id} />
-              </div>
-            </div>
-          )
-        }
-      </div>
+   
       </>
     );
   }else{

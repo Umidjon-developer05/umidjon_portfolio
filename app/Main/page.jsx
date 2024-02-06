@@ -15,6 +15,8 @@ const Main = () => {
     'MERN Stack developer'
   ]);
   const [displayedText, setDisplayedText] = useState('');
+  
+  let animationInterval; // Declare it here
 
   useEffect(() => {
     const getBannerAndAnimate = async () => {
@@ -35,8 +37,6 @@ const Main = () => {
     };
   }, []); // Empty dependency array to run only once on mount
 
-  let animationInterval;
-
   const animateText = () => {
     let currentIndex = 0;
 
@@ -54,11 +54,12 @@ const Main = () => {
     }, bannerD.length * 1000); // Adjust the total animation duration as needed
   };
 
+  // ... rest of your component
+
   return (
     <div className='w-full border h-[720px]  -z-20  ' >
       {banner.map((item, index) => (
-      <>
-        <div key={index} style={{ backgroundImage: 'url(/coder.webp)', width: "100%", height: "100%", backgroundRepeat: "no-repeat", backgroundSize: "cover" ,}}  className='brightness-50'> 
+        <div  key={index} style={{ backgroundImage: 'url(/coder.webp)', width: "100%", height: "100%", backgroundRepeat: "no-repeat", backgroundSize: "cover" ,}}  className='brightness-50'> 
           <div className=' flex items-center justify-center h-[100%]'>
           <div className='flex h-[100%] flex-col justify-center items-center ' data-aos="zoom-in-down">
             <h1 className='text-[35px] text-slate-950    opacity-100' style={{ fontWeight: "600" }}>{item?.firstName}</h1>
@@ -75,8 +76,6 @@ const Main = () => {
           </div>
           </div>
         </div>
-        
-      </>
       ))}
     </div>
   );

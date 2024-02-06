@@ -15,18 +15,11 @@ import { Toaster } from "@/components/ui/sonner";
 export default function RootLayout({ children }) {
   useEffect(() => {
     // Ensure this code runs only on the client side
-    if (typeof window !== 'undefined') {
       AOS.init({
         duration: 800,
         once: false,
       });
-    }else{
-      return (
-        <>
-          hello 
-        </>
-      )
-    }
+  
   }, []);
 
   return (

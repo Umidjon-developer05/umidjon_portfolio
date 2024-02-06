@@ -5,24 +5,17 @@ import { useEffect, useState ,Fragment} from "react";
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
-// import { Moon, Sun } from "lucide-react"
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu"
 
-import Image from "next/image";
 
 export default function Navbar() {
   const session = useSession();
   const [email,setEmail]= useState('')
   useEffect(() => {
     if (session?.data?.user?.email) {
-      setEmail(session.data.user.email);
+      setEmail(session?.data?.user?.email);
     }
-  }, [session]);
+  }, []);
+  
   return (
     <div className="flex   w-full justify-end" >
       <nav className="flex justify-between   px-8 py-3  ">
