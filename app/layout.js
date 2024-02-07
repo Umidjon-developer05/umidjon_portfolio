@@ -7,7 +7,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import AuthProvider from "@/components/AuthProvider/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
+import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/Header/Header";
+import About from "./About/page";
 import { Toaster } from "@/components/ui/sonner";
 
 export default function RootLayout({ children }) {
@@ -33,11 +35,17 @@ export default function RootLayout({ children }) {
                     <div></div>
                   </div>
                   <div className="w-full">
-           
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
                     <Header />
                     <Navbar />
                     {children}
                     <Toaster />
+            </ThemeProvider>
                   </div>
                 </div>
                 <div></div>

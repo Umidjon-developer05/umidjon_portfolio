@@ -17,7 +17,7 @@ const Header = () => {
   };
   if (session?.user?.email !== process.env.NEXT_PUBLIC_EMAIL) {
   return (
-    <div className={`' fixed  h-[100vh] flex flex-col items-center gap-8 z-30   ${resolvedTheme ==='dark' && 'bg-slate-950'}  '`} >
+    <div className={`' fixed  h-[100vh] flex flex-col items-center gap-8 z-30   '`} >
         <div className='flex justify-end  '>
         <div className='w-10 h-10 cursor-pointer border flex justify-center items-center  mt-3 ml-3' style={{ borderRadius: '50%' ,display:`${isMenuOpen ? 'none':'block'}`}} onClick={toggleMenu}>
           <a className='flex justify-center items-center h-[100%]'>
@@ -27,7 +27,7 @@ const Header = () => {
           </a>
         </div>
         </div >
-          <div style={{display:`${isMenuOpen ? 'block ':'none'}`,marginTop:'-35px',transform: 'revert-layer'}} className={` ${isMenuOpen ? '':''} bg-slate-950   border  w-60  h-[100vh] flex flex-col items-center gap-8'`}>
+          <div style={{display:`${isMenuOpen ? 'block ':'none'}`,marginTop:'-35px',transform: 'revert-layer'}} className={` ${isMenuOpen ? '':''} bg-slate-950  border  w-60  h-[100vh] flex flex-col items-center gap-8'`}>
         <div className='flex justify-end p-2'>
           <div className='w-10 h-10 cursor-pointer border flex justify-center items-center  mt-3 ml-3' style={{ borderRadius: '50%' }} onClick={toggleMenu}>
           <a className='flex justify-center items-center'>

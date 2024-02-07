@@ -24,18 +24,18 @@ const UsersGet = ({ Portfolio }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="container mx-auto">
+    <div className="">
       <Carousel
         opts={{
           align: 'start',
         }}
-        className="w-full mt-24 mx-auto "
+        className="w-full flex items-center h-[100vh]"
       >
-        <CarouselContent className="flex">
+        <CarouselContent className='h-[700px] '>
           {Portfolio?.map((t, index) => (
             <CarouselItem
               key={index}
-              className="pl-3 ml-5 md:basis-1/2 lg:basis-1/3 cursor-pointer mx-2 border rounded-lg  transition-transform duration-300 transform hover:scale-90"
+              className=" md:basis-1/2 lg:basis-1/3  cursor-pointer    transition-transform duration-100 transform hover:scale-90"
               onClick={() => setActiveIndex(index)}
             >
               <div className="pl-1">
