@@ -9,19 +9,14 @@ import { Button } from "@/components/ui/button"
 
 export default function Navbar() {
   const session = useSession();
-  const [email,setEmail]= useState('')
-  useEffect(() => {
-    if (session?.data?.user?.email) {
-      setEmail(session?.data?.user?.email);
-    }
-  }, []);
+
   
   return (
     <div className="flex   w-full justify-end" >
       <nav className="flex justify-between   px-8 py-3  ">
       {
-         email === process.env.NEXT_PUBLIC_EMAIL ?
-         <Link className= "p-2" href={`${email === process.env.NEXT_PUBLIC_EMAIL?'/addTopic':'/'}`}>
+         session?.data?.user?.email === process.env.NEXT_PUBLIC_EMAIL ?
+         <Link className= "p-2" href={`${session?.data?.user?.email === process.env.NEXT_PUBLIC_EMAIL?'/addTopic':'/'}`}>
             <Button>Add Topic</Button>
           </Link>
             : <div></div>

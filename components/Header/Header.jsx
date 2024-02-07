@@ -75,22 +75,22 @@ const Header = () => {
         </div>
          </div>
          <div className='flex  flex-col  ml-12 gap-8 mt-6'>
-            <Link href={'/'} onClick={closeMenu} className='text-[20px] text-left flex items-center gap-3' style={{fontWeight:"600"}}>
+            <a href="#" onClick={closeMenu} className='text-[20px] text-left flex items-center gap-3' style={{fontWeight:"600"}}>
               <div>
               <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="Sidebar_icon__czDJe" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>  
               </div>  
               <div>
               Home
               </div>
-            </Link>
-            <Link href={'/About'} onClick={closeMenu} className='text-[20px] text-left flex items-center gap-3' style={{fontWeight:"600"}}>
-              <div>
+              </a>
+             <a href="#About" onClick={closeMenu} className='text-[20px] text-left flex items-center gap-3' style={{fontWeight:"600"}}>
+             <div>
               <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="Sidebar_icon__czDJe" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
               </div>
               <div>
               About
               </div>
-            </Link>
+             </a>
             <Link href={'/'} onClick={closeMenu} className='text-[20px] text-left flex items-center gap-3' style={{fontWeight:"600"}}>
               
               <div>
@@ -100,14 +100,14 @@ const Header = () => {
               Skills
               </div>
             </Link>
-            <Link href={'/Portfolio'} onClick={closeMenu} className='text-[20px] text-left flex items-center gap-3' style={{fontWeight:"600"}}>
+            <a href="#Portfolio" onClick={closeMenu} className='text-[20px] text-left flex items-center gap-3' style={{fontWeight:"600"}}>
               <div>
               <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24" class="Sidebar_icon__czDJe" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M14 11H10V13H14V11Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5V4C7 2.89545 7.89539 2 9 2H15C16.1046 2 17 2.89545 17 4V5H20C21.6569 5 23 6.34314 23 8V18C23 19.6569 21.6569 21 20 21H4C2.34314 21 1 19.6569 1 18V8C1 6.34314 2.34314 5 4 5H7ZM9 4H15V5H9V4ZM4 7C3.44775 7 3 7.44769 3 8V14H21V8C21 7.44769 20.5522 7 20 7H4ZM3 18V16H21V18C21 18.5523 20.5522 19 20 19H4C3.44775 19 3 18.5523 3 18Z" fill="currentColor"></path></svg>
               </div>
               <div>
                 Portfolio
               </div>
-            </Link>
+              </a>
             <Link href={'/'} onClick={closeMenu} className='text-[20px] text-left flex items-center gap-3' style={{fontWeight:"600"}}>
               <div>
               <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="Sidebar_icon__czDJe" height="22" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>

@@ -29,7 +29,8 @@ const UsersGet = ({ Portfolio }) => {
         opts={{
           align: 'start',
         }}
-        className="w-full flex items-center h-[100vh]"
+        className="w-full mt-24"
+        data-aos="zoom-in"
       >
         <CarouselContent className='h-[700px] '>
           {Portfolio?.map((t, index) => (
@@ -39,7 +40,7 @@ const UsersGet = ({ Portfolio }) => {
               onClick={() => setActiveIndex(index)}
             >
               <div className="pl-1">
-                <Card className={`shadow-lg ${activeIndex === index ? 'hover:shadow-xl' : ''}`}>
+                <Card className={`shadow-lg border rounded-lg ${activeIndex === index ? 'hover:shadow-xl' : ''}`}>
                   <CardContent className="flex flex-col aspect-square gap-2 p-6">
                     <Image
                       src={t?.images?.url}
@@ -50,7 +51,7 @@ const UsersGet = ({ Portfolio }) => {
                       className="sm:h-[220px]"
                     />
                     <span className="text-2xl pl-2 pr-2 font-semibold">{t?.title}</span>
-                    <h1 className="pl-2 pr-2 text-sm">{t?.description}</h1>
+                    <h1 className="pl-2 pr-2 text-sm line-clamp-2">{t?.description}</h1>
                   </CardContent>
                   <div className="flex justify-end p-4 w-full">
                     <Dialog>
@@ -78,7 +79,7 @@ const UsersGet = ({ Portfolio }) => {
                             </div>
                             <div className="sm:w-[570px]">
                               <DialogTitle className="text-sm text-[35px] text-left">{t?.title}</DialogTitle>
-                              <DialogDescription className="mt-5 sm:text-[20px] sm:w-96 text-left">
+                              <DialogDescription className="mt-2 sm:w-96 text-left">
                                 {t?.description}
                               </DialogDescription>
                               <div>
@@ -118,8 +119,8 @@ const UsersGet = ({ Portfolio }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="z-30" />
-        <CarouselNext />
+            <CarouselPrevious className="z-30 position-absolute top-1/3 mx-5" />
+            <CarouselNext className='position-absolute top-1/3 mx-5' />
       </Carousel>
     </div>
   );

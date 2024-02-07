@@ -32,16 +32,16 @@ export default function RootLayout({ children }) {
                   <div className="flex">
                     <div>
                     </div>
-                    <div></div>
+                    <Header />
+                    <div>                     </div>
                   </div>
                   <div className="w-full">
             <ThemeProvider
               attribute="class"
-              defaultTheme="system"
-              enableSystem
+              defaultTheme="dark"
+              enableSystem                
               disableTransitionOnChange
             >
-                    <Header />
                     <Navbar />
                     {children}
                     <Toaster />

@@ -1,7 +1,10 @@
 "use client"
 import { useSession } from 'next-auth/react';
 import Main from './Main/page';
+import About from './About/page';
+// import Portfolio from './Portfolio/page';
 import TopicsList from '@/components/TopicsList';
+import Resume from './Resume/page';
 
 
 export default function Home() {
@@ -16,6 +19,9 @@ export default function Home() {
     return (
       <div >
          <Main/>
+         <About/>
+         <Resume/>
+         {/* <Portfolio/> */}
       </div>
     );
   }
