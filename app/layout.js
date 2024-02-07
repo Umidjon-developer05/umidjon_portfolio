@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="bg-slate-950">
         <AuthProvider>
           <div className="max-w-10xl mx-auto ">
               <div>
