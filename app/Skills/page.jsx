@@ -6,9 +6,6 @@ import GlobalsApi from '../_utils/GlobalsApi';
 
 const Skills = () => {
     const [Lang,setLang] = useState(true)
-    const [Frontend1,setFrontend] = useState([])
-    const [Backend1,setBackend] = useState([])
-    console.log(Backend1);
     function Technologies(p) {
         if (p === "Frontend") {
             setLang(true)
@@ -16,20 +13,7 @@ const Skills = () => {
             setLang(false)
         }
     }
-    const getBannerAndAnimate = async () => {
-        try {
-          const resp = await GlobalsApi.getAllFullStackL();
-          setFrontend(resp?.frontendMs[0])
-          setBackend(resp?.backends[0])
-        } catch (error) {
-          console.error("Error fetching banner:", error);
-        }
-      };
   
-      useEffect(()=>{
-      getBannerAndAnimate();
-
-      },[])
   return (
     <div id='Skills' className='container sm:h-[600px] ' style={{ backgroundImage: 'url(/bg2.svg)', width: "100%" ,backgroundSize:"contain",backgroundRepeat:"no-repeat"}}>
     <h1 className='text-[30px] '  data-aos="fade-right">Skills</h1>
@@ -43,9 +27,9 @@ const Skills = () => {
           <div>
             {
                 Lang ? 
-                <Frontend Frontend1={Frontend1}/> 
+                <Frontend /> 
                 :
-                <Backend Backend1 ={Backend1}/>
+                <Backend />
             }
           </div>
       </div>
