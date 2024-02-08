@@ -2,9 +2,11 @@
 import { useSession } from 'next-auth/react';
 import Main from './Main/page';
 import About from './About/page';
-// import Portfolio from './Portfolio/page';
+import Portfolio from './Portfolio/page';
 import TopicsList from '@/components/TopicsList';
 import Resume from './Resume/page';
+import Skills from './Skills/page';
+import Contact from './Contact/page';
 
 
 export default function Home() {
@@ -21,7 +23,9 @@ export default function Home() {
          <Main/>
          <About/>
          <Resume/>
-         {/* <Portfolio/> */}
+         <Skills/>
+         <Portfolio/>
+         <Contact/>
       </div>
     );
   }

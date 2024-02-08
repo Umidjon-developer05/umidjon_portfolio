@@ -47,7 +47,37 @@ const getAllPortfolio = async ()=>{
     const result = await request(MASTER_URL,query);
     return result;
 }
+const getAllFullStackL = async ()=>{
+    const query =gql`
+    query MyQuery {
+      frontendMs {
+        tili {
+          ... on Frontend {
+            id
+            frontendImage {
+              url
+            }
+          }
+        }
+      }
+      backends {
+        tili1 {
+          ... on BackendC {
+            id
+            backendImage {
+              url
+            }
+          }
+        }
+      }
+    }
+    
+    `
+    const result = await request(MASTER_URL,query);
+    return result;
+}
 export default { 
     getAllBanner,
-    getAllPortfolio
+    getAllPortfolio,
+    getAllFullStackL
 }
