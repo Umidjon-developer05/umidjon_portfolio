@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/Header/Header";
 import About from "./About/page";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster"
 
 export default function RootLayout({ children }) {
   useEffect(() => {

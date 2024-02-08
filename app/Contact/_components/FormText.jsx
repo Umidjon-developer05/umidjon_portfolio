@@ -4,7 +4,7 @@ const FormText = () => {
   return (
     <div>
         <div>
-            <h1  className='font-serif sm:text-[50px] text-blue-600 text-center'>Say Hi 👋</h1>
+            <h1  className='font-serif sm:text-[50px] text-blue-600 text-center'>Hello 👋</h1>
         <h1 className='font-serif sm:text-[30px]'> Reach out and let's bring your ideas to life! </h1>
         <h2 className='font-serif sm:text-[30px]'> I am available for freelance work.</h2>
        <div className='flex flex-wrap items-center gap-5'>  

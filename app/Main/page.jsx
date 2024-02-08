@@ -32,10 +32,9 @@ const Main = () => {
     getBannerAndAnimate();
 
     return () => {
-      // Cleanup the interval when the component unmounts
       clearInterval(animationInterval);
     };
-  }, []); // Empty dependency array to run only once on mount
+  }, []);
 
   const animateText = () => {
     let currentIndex = 0;
@@ -72,7 +71,9 @@ const Main = () => {
             </div>
             <div> 
             </div>
-              <Button className='transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 text-white w-32' style={{transition:'2s all'}}>Contact</Button>
+            <a href="#Contact">
+            <Button className='transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 text-white w-32' style={{transition:'2s all'}}>Contact</Button>
+            </a>
           </div>
           </div>
         </div>

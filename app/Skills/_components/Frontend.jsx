@@ -4,7 +4,7 @@ import React from 'react'
 const Frontend = ({Frontend1}) => {
     console.log(Frontend1?.tili);
   return (
-    <div className='flex gap-8 flex-wrap items-center mt-10'>
+    <div className='flex gap-8 flex-wrap items-center mt-10' data-aos="zoom-in">
         {
             Frontend1?.tili?.map((item,index)=>(
             <div key={index}>

@@ -5,7 +5,7 @@ const Backend = ({Backend1}) => {
     console.log(Backend1);
   return (
     <div>
-         <div  className='flex gap-8 flex-wrap items-center mt-10'>
+         <div  className='flex gap-8 flex-wrap items-center mt-10' data-aos="zoom-in">
         {
             Backend1?.tili1?.map((item,index)=>(
             <div key={index}>
