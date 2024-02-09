@@ -20,7 +20,7 @@ const Backend = () => {
          </div>
          <div>
 
-         <p  className='sm:text-[20px]'>Next.js</p>
+         <p  className='sm:text-[20px]'>Node.js</p>
          </div>
         </div>
     <div  className="flex flex-col hover:text-green-500 cursor-pointer  items-center gap-1 justify-center" >

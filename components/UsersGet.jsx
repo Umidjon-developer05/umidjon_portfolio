@@ -71,9 +71,9 @@ const UsersGet = ({ Portfolio }) => {
                               <Image
                                 src={t?.images?.url}
                                 alt="sa"
-                                width={570}
+                                width={600}
                                 height={1000}
-                                className="sm:h-[380px]"
+                                className="sm:h-[350px]"
                                 style={{ borderRadius: '10px' }}
                               />
                             </div>
@@ -86,7 +86,8 @@ const UsersGet = ({ Portfolio }) => {
                                 <div>
                                   <h1 className="text-red-600 sm:text-[25px] mt-3 text-left">Project Stack</h1>
                                   <Languse portfoliocom={t.portfoliocom} />
-                                  <Button className="btn" variant="outline">
+
+                                  <Button onClick={()=>window.open(`${t?.url}`, '_blank')}  className="btn" variant="outline">
                                     View Project
                                     <svg
                                       stroke="currentColor"

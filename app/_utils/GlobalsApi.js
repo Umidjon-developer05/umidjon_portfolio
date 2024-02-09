@@ -41,6 +41,7 @@ const getAllPortfolio = async ()=>{
           }
         }
         description
+        url
       }
     }    
     `
