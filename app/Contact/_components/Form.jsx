@@ -39,7 +39,7 @@ const Form = () => {
         if (response.ok) {
           toast({
             title: "Habaringizdan mamnunmiz ☺️",
-            description: "Habaringiz telegram botga yuborildi",
+            description: "Habaringiz telegram botga yuborildi ",
           })
      
         } else {
