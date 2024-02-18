@@ -122,8 +122,17 @@ const Frontend = () => {
 
          <p  className='sm:text-[20px]'>shadcn UI</p>
          </div>
+          
         </div>
-      
+      <div  className="flex hover:text-green-600 flex-col items-center gap-1 justify-center  transition-transform duration-100 cursor-pointer  transform hover:scale-105" >
+         <div >
+         <svg xmlns="http://www.w3.org/2000/svg" width="74" height="74" viewBox="0 0 24 24" fill='#fff '  ><path d="m12 12.765 5.592-9.437h-3.276L12 7.33v.002L9.688 3.328h-3.28z"></path><path d="M18.461 3.332 12 14.235 5.539 3.332H1.992L12 20.672l10.008-17.34z"></path></svg>
+         </div>
+         <div>
+
+         <p  className='sm:text-[20px]'>Vue js</p>
+         </div>
+        </div>
     </div>
   )
 }
