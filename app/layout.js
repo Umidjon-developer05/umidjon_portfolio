@@ -11,6 +11,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/Header/Header";
 import About from "./About/page";
 import { Toaster } from "@/components/ui/toaster"
+import StarsCanvas from "@/components/StarBackground";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -27,29 +28,29 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AuthProvider>
           <div className="max-w-10xl mx-auto ">
-              <div>
+            <div>
+              <div className="flex">
                 <div className="flex">
-                  <div className="flex">
-                    <div>
-                    </div>
-                    <Header />
-                    <div>                     </div>
-                  </div>
-                  <div className="w-full">
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="dark"
-              enableSystem                
-              disableTransitionOnChange
-            >
+                  <div></div>
+                  <Header />
+                  <div> </div>
+                </div>
+                <div className="w-full">
+                  <ThemeProvider
+                    attribute="class"
+                    defaultTheme="dark"
+                    enableSystem
+                    disableTransitionOnChange
+                  >
+                    <StarsCanvas />
                     <Navbar />
                     {children}
                     <Toaster />
-            </ThemeProvider>
-                  </div>
+                  </ThemeProvider>
                 </div>
-                <div></div>
               </div>
+              <div></div>
+            </div>
           </div>
         </AuthProvider>
       </body>
