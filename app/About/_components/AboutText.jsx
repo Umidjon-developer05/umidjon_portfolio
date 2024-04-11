@@ -13,7 +13,7 @@ const AboutText = () => {
       everyday problems, and I'm always curious to learn more when it comes
       to new technologies and creative coding.
     </h1>
-    <Button className='btn w-40 text-white'>Resume</Button>
+    <Button className='btn w-40 text-white z-50'>Resume</Button>
   </div>
     
   )
