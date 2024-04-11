@@ -20,7 +20,7 @@ const HeroContent = () => {
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
           variants={slideInFromTop}
-          className="py-[8px] flex rounded-lg px-[7px] border border-[#7042f88b] opacity-[0.9]"
+          className="py-[8px] flex rounded-lg px-[7px] w-full border border-[#7042f88b] opacity-[0.9]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
           <h1 className=" text-white sm:text-[13px]">
@@ -30,7 +30,7 @@ const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 sm:text-6xl font-bold text-white sm:max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-6 w-full sm:text-6xl font-bold text-white sm:max-w-[600px] w-auto h-auto"
         >
           <span>
             Providing
@@ -44,7 +44,7 @@ const HeroContent = () => {
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="sm:text-lg text-gray-400 my-5 sm:max-w-[600px]"
+          className="sm:text-lg text-gray-400 my-5 sm:max-w-[600px] w-full"
         >
           I&apos;m a Full Stack Software Engineer with experience in Website,
           Mobile, and Software development. Check out my projects and skills.
