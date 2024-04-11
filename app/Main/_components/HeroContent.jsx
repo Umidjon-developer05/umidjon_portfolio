@@ -17,7 +17,7 @@ const HeroContent = () => {
       animate="visible"
       className="flex  flex-wrap items-center justify-center px-20 mt-10 z-[20]"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="h-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
           variants={slideInFromTop}
           className="py-[8px] flex rounded-lg px-[7px]  border border-[#7042f88b] opacity-[0.9]"
