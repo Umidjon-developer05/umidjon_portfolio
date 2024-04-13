@@ -18,7 +18,7 @@ const Header = () => {
   if (session?.user?.email !== process.env.NEXT_PUBLIC_EMAIL) {
   return (
     <>
-   <div className='flex justify-end fixed  z-30 '>
+   <div className='flex justify-end fixed  z-50 '>
         <div className={`' w-10 h-10 cursor-pointer border flex justify-center items-center  mt-3 ml-3 '`} style={{ borderRadius: '50%' ,display:`${isMenuOpen ? 'none':'block'}`}} onClick={toggleMenu}>
           <a className='flex justify-center items-center h-[100%]'>
             <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,7 @@ const Header = () => {
           </a>
         </div>
         </div >  
-    <div className={`' fixed  flex flex-col items-center gap-7 z-30   navbar overlay  ${isMenuOpen ? 'open' : ''} '`}  >
+    <div className={`' fixed  flex flex-col items-center gap-7 z-50   navbar overlay  ${isMenuOpen ? 'open' : ''} '`}  >
                 <div style={{display:`${isMenuOpen ? 'block ':'none'}`}}  className={`' bg-slate-950     flex flex-col items-center gap-8 overlay navbar   ${isMenuOpen ? 'open' : ''} '`}>
 
                 <div className={`' w-10 h-10 cursor-pointer border flex justify-center items-center  mt-3 ml-3  ${isMenuOpen ? 'open' : ''} ' `} style={{ borderRadius: '50%' }} onClick={toggleMenu}>
