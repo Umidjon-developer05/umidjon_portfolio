@@ -15,7 +15,7 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex items-center justify-between px-20 mt-10  mb-20"
+      className="flex items-center justify-between px-20 mt-10 z-[20] mb-20"
     >
       <div className="h-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
@@ -58,7 +58,7 @@ const HeroContent = () => {
       </div>
 
       <motion.div
-        variants={slideInFromRight(0.8)}
+        variants={slideInFromRight(0.5)}
         className="w-full sm:block hidden h-full flex justify-center items-center"
       >
         <Image
