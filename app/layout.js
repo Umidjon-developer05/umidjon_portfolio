@@ -25,6 +25,11 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+       <link
+        rel="icon"
+        href="/favicon.svg"
+        type="image/x-icon"
+      />
       <body className={inter.className}>
         <AuthProvider>
           <div className="max-w-10xl mx-auto ">
