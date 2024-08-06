@@ -21,8 +21,8 @@ const Skills = () => {
       </div>
       <div className='flex flex-col flex-wrap items-center'  data-aos="fade-up">
           <div className='flex justify-between w-full z-50'>
-                <button className={`' border w-[50%] transition-all  h-16 ${Lang ? 'bg-slate-500 border-b-red-600 ': ''} '`} onClick={()=>Technologies('Frontend')}>Frontend</button>
-                <button className={`' border w-[50%] transition-all  h-16 ${!Lang ? 'bg-slate-500 border-b-red-600': ''} '`} onClick={()=>Technologies('Backend')}>Backend</button>
+                <button className={`' border w-[50%] transition-all  h-16 ${Lang ? 'bg-slate-500 border-b-red-600  border-spacing-5 ': ''} '`} onClick={()=>Technologies('Frontend')}>Frontend</button>
+                <button className={`' border w-[50%] transition-all  h-16 ${!Lang ? 'bg-slate-500 border-b-red-600 border-spacing-5 ': ''} '`} onClick={()=>Technologies('Backend')}>Backend</button>
           </div>
           <div className="mx-5">
             {
