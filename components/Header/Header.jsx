@@ -13,9 +13,9 @@ const Header = () => {
           <div className="border mt-5 w-36 cursor-pointer h-36 hover:animate-pulse m-auto flex justify-center items-center" style={{ borderRadius: "50%" }}>
             <Image 
               src={'/umidjon.jpg'}
-              width={1000}
+              width={"200px"}
               alt='assa'
-              style={{ borderRadius: "50%", height: "300px" }}
+              style={{ borderRadius: "50%", height: "200px" }}
             />
           </div>
           <h1 className='font-semibold text-[22px] text-center mt-2'>Umidjon G'afforov</h1>
