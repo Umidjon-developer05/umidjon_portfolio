@@ -36,9 +36,7 @@ export default function RootLayout({ children }) {
             <div>
               <div className="flex">
                 <div className="flex">
-                  <div></div>
                   <Header />
-                  <div> </div>
                 </div>
                 <div className="w-full">
                   <ThemeProvider
@@ -49,7 +47,9 @@ export default function RootLayout({ children }) {
                   >
                     <StarsCanvas />
                     <Navbar />
+                    <div className="sm:ml-80">
                     {children}
+                    </div>
                     <Toaster />
                   </ThemeProvider>
                 </div>
