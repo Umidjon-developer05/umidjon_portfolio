@@ -23,23 +23,7 @@ export default function Navbar() {
       }
         <Menu as="div"  className={'flex gap-10'}>
      
-                  <div>
-                   {
-                    session.data?.user?.email ?
-                    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                    <span className="absolute -inset-1.5" />
-                    <span className="sr-only">Open user menu</span>
-                    <img
-                      className="h-8 w-8 rounded-full"
-                      src={session?.data?.user?.image}
-                      alt="user"
-                    />
-                  </Menu.Button> 
-                  :<Link  href={"/SingIn"}>
-                    <Button >Sing In</Button>
-                   </Link>
-                   }
-                  </div>
+                  
                   <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"
