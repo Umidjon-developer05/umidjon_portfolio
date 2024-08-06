@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
                   >
                     <StarsCanvas />
                     <Navbar />
-                    <div className="sm:ml-80">
+                    <div className="sm:ml-80 mx-5">
                     {children}
                     </div>
                     <Toaster />
