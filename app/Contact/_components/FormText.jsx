@@ -3,7 +3,7 @@ import React from 'react'
 const FormText = () => {
   return (
     <div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 mx-5">
           <h1  className='font-serif sm:text-[30px] text-blue-600 text-center'>Hello 👋</h1>
         <h1 className='font-serif sm:text-[25px]'> Reach out and let's bring your ideas to life! </h1>
         <h2 className='font-serif sm:text-[25px]'> I am available for freelance work.</h2>
