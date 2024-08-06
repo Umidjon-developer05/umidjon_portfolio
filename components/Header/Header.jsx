@@ -10,7 +10,7 @@ const Header = () => {
     return (
       <div className="fixed flex flex-col  gap-7 z-50 h-screen hidden sm:block sm:w-[350px] bg-gray-950 ">
         <div className=" flex flex-col   ">
-          <div className="border mt-5 w-36 cursor-pointer h-36 hover:animate-pulse m-auto flex justify-center items-center" style={{ borderRadius: "50%" }}>
+          <div className="border mt-5 w-40 cursor-pointer h-40 hover:animate-pulse m-auto flex justify-center items-center" style={{ borderRadius: "50%" }}>
             <Image 
               src={'/umidjon.jpg'}
               width={1000}
