@@ -43,7 +43,7 @@ const HeroContent = () => {
         </motion.div>
 
         <motion.p
-          variants={slideInFromLeft(0.8)}
+          variants={slideInFromLeft(0.5)}
           className="sm:text-lg text-gray-400 my-5 sm:max-w-[600px] w-full"
         >
           I&apos;m a Full Stack Software Engineer with experience in Website,
