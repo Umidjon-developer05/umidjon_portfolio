@@ -13,7 +13,7 @@ const Header = () => {
           <div className="border mt-5 w-36 cursor-pointer h-36 hover:animate-pulse m-auto flex justify-center items-center" style={{ borderRadius: "50%" }}>
             <Image 
               src={'/umidjon.jpg'}
-              width={"250%"}
+              width={"100%"}
               alt='assa'
               style={{ borderRadius: "50%", height: "100%",backgroundSize:"cover" }}
             />
