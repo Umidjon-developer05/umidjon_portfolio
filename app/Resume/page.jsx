@@ -8,7 +8,7 @@ const Resume = () => {
           <h1 className='text-[30px] '  data-aos="fade-right">Resume</h1>
           <div className='bg-blue-700 w-full h-1 rounded-2xl' data-aos="zoom-in">
             </div>
-            <div className='flex flex-wrap sm:justify-between items-center'  data-aos="fade-up">
+            <div className='flex flex-wrap sm:justify-between items-center mx-5'  data-aos="fade-up">
                 <Educations/>
                 <Experience/>
             </div>

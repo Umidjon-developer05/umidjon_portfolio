@@ -59,7 +59,6 @@ const UsersGet = ({ Portfolio }) => {
                         <Button
                           variant="outline"
                           onClick={() => setActiveIndex(index)}
-                          className="hover:bg-gray-200"
                         >
                           Open
                         </Button>
@@ -120,7 +119,7 @@ const UsersGet = ({ Portfolio }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-            <CarouselPrevious className="z-30 position-absolute top-1/3 mx-5" />
+            <CarouselPrevious className="z-30 position-absolute top-1/3 mx-20" />
             <CarouselNext className='position-absolute top-1/3 mx-5' />
       </Carousel>
     </div>

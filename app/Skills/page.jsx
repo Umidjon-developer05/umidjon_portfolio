@@ -24,7 +24,7 @@ const Skills = () => {
                 <button className={`' border w-[50%] transition-all  h-16 ${Lang ? 'bg-slate-700': ''} '`} onClick={()=>Technologies('Frontend')}>Frontend</button>
                 <button className={`' border w-[50%] transition-all  h-16 ${!Lang ? 'bg-slate-700': ''} '`} onClick={()=>Technologies('Backend')}>Backend</button>
           </div>
-          <div>
+          <div className="mx-5">
             {
                 Lang ? 
                 <Frontend /> 
