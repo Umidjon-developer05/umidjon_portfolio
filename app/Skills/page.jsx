@@ -15,7 +15,7 @@ const Skills = () => {
     }
   
   return (
-    <div id='Skills' className='container flex justify-center  sm:h-[600px] ' style={{ backgroundImage: 'url(/bg2.svg)', width: "100%" ,backgroundSize:"contain",backgroundRepeat:"no-repeat"}}>
+    <div id='Skills' className='container flex flex-col items-center justify-center  sm:h-[600px] ' style={{ backgroundImage: 'url(/bg2.svg)', width: "100%" ,backgroundSize:"contain",backgroundRepeat:"no-repeat"}}>
     <h1 className='text-[30px] '  data-aos="fade-right">Skills</h1>
     <div className='bg-blue-700 w-full h-1 rounded-2xl' data-aos="zoom-in">
       </div>
