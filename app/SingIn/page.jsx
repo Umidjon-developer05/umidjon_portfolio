@@ -23,16 +23,8 @@ const Register = () => {
  
 
   return (
-    <div className={styles.container}>
+    <div >
       
-      <button
-        onClick={() => {
-          signIn("google");
-        }}
-        className={styles.button + " " + styles.google}
-      >
-        Login with Google
-      </button>
     </div>
   );
 };
