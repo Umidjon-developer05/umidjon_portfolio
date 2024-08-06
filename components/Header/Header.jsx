@@ -9,8 +9,8 @@ const Header = () => {
 
 
     return (
-      <div className="fixed flex flex-col items-center gap-7 z-50 navbar overlay">
-        <div className="bg-slate-950 flex flex-col items-center gap-8 overlay navbar">
+      <div className="fixed flex flex-col items-center gap-7 z-50  w-[300px] ">
+        <div className="bg-slate-950 flex flex-col items-center gap-8  ">
           <div className="border w-36 cursor-pointer h-36 hover:animate-pulse m-auto flex justify-center items-center" style={{ borderRadius: "50%" }}>
             <Image 
               src={'/img.jpg'}

@@ -38,7 +38,6 @@
     transform: translateX(-100%); /* Move the navbar off-screen initially */
     transition: height 2s ease, transform 2s ease, width 2s ease; /* Adjust the duration and timing function as needed */
     transition: 2s all;
-    
 }
   
   /* Styles for the navbar when it's open */
@@ -46,7 +45,6 @@
     height: 100vh; /* Or your desired height */
     transform: translateX(0); /* Move the navbar back to its original position */
     width: 300px; 
-    
   }
   
   /* Overlay styles */
