@@ -4,7 +4,7 @@ import FormText from './_components/FormText'
 
 const Contact = () => {
   return (
-    <div className='container h-[700px]' id='Contact'>
+    <div className='container h-[700px] mx-5' id='Contact'>
         <h1 className='text-[30px] '  data-aos="fade-right">Contact</h1>
     <div className='bg-blue-700 w-full h-1 rounded-2xl' data-aos="zoom-in">
       </div>

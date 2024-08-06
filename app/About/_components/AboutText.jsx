@@ -3,7 +3,7 @@ import React from 'react'
 
 const AboutText = () => {
   return (
-    <div className='flex flex-col gap-10  lg:max-w-screen-lg mx-5 '>
+    <div className='flex flex-col gap-10  lg:max-w-screen-lg '>
     <h1 className='font-serif text-xl sm:text-4xl lg:text-3xl xl:text-6xl '>
       G'afforov Umidjon
     </h1>
