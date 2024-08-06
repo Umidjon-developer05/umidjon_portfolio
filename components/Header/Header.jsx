@@ -9,9 +9,9 @@ const Header = () => {
 
 
     return (
-      <div className="fixed flex flex-col items-center gap-7 z-50  w-[300px] ">
-        <div className="bg-slate-950 flex flex-col items-center gap-8  ">
-          <div className="border w-36 cursor-pointer h-36 hover:animate-pulse m-auto flex justify-center items-center" style={{ borderRadius: "50%" }}>
+      <div className="fixed flex flex-col items-center gap-7 z-50  w-[400px] bg-slate-950 ">
+        <div className=" flex flex-col items-center gap-8  ">
+          <div className="border mt-5 w-36 cursor-pointer h-36 hover:animate-pulse m-auto flex justify-center items-center" style={{ borderRadius: "50%" }}>
             <Image 
               src={'/img.jpg'}
               width={1000}
@@ -52,15 +52,24 @@ const Header = () => {
             </div>
           </div>
           <nav>
-            <ul className="flex flex-col items-center gap-5">
+            <ul className="flex flex-col gap-5">
               <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
-                <Link href='/about'>About</Link>
+                <Link href='#About'>About</Link>
               </li>
               <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
-                <Link href='/projects'>Projects</Link>
+                <Link href='#Portfolio'>Projects</Link>
               </li>
               <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
-                <Link href='/contact'>Contact</Link>
+                <Link href='#Resume'>Resume</Link>
+              </li>
+              <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+                <Link href='/projects'>Education</Link>
+              </li>
+              <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+                <Link href='#Skills'>Skills</Link>
+              </li>
+              <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+                <Link href='#Contact'>Contact</Link>
               </li>
             </ul>
           </nav>

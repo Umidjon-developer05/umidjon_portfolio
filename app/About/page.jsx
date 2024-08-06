@@ -9,7 +9,7 @@ const About = () => {
           <h1 className='text-[30px] '  data-aos="fade-right">About Me</h1>
           <div className='bg-blue-700 w-full h-1 rounded-2xl' data-aos="zoom-in">
           </div>
-          <div className='flex flex-wrap-reverse justify-between items-center  lg:gap-10  mt-5'    data-aos="fade-up"
+          <div className='flex flex-wrap-reverse justify-between items-center    mt-5'    data-aos="fade-up"
              data-aos-duration="4000" >
               <AboutText/>
               <AboutImages/>
