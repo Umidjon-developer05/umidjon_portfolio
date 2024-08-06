@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import "./Header.css";
-
+import {Store,House ,FolderKanban ,FileChartColumn ,University ,CodeXml ,Contact } from "lucide-react"
 const Header = () => {
 
 
@@ -53,22 +53,35 @@ const Header = () => {
           </div>
           <nav className="p-10">
             <ul className="flex flex-col gap-5">
-              <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <li className="font-semibold flex gap-2 text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+                <House className="w-5 h-5"/>       
+                <Link href='#'>Home</Link>
+              </li>
+              <li className="font-semibold flex gap-2 text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+                <Store className="w-5 h-5"/>       
                 <Link href='#About'>About</Link>
               </li>
-              <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <li className="font-semibold flex gap-2 text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+                <FolderKanban className="w-5 h-5"/>
                 <Link href='#Portfolio'>Projects</Link>
               </li>
-              <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <li className="font-semibold flex gap-2 text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <FileChartColumn className="w-5 h-5"/>
+                
                 <Link href='#Resume'>Resume</Link>
               </li>
-              <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <li className="font-semibold flex gap-2  text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <University className="w-5 h-5"/>
+              
                 <Link href='/projects'>Education</Link>
               </li>
-              <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <li className="font-semibold flex gap-2 text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <CodeXml className="w-5 h-5"/>
                 <Link href='#Skills'>Skills</Link>
               </li>
-              <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <li className="font-semibold flex gap-2 text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
+              <Contact className="w-5 h-5"/>
+               
                 <Link href='#Contact'>Contact</Link>
               </li>
             </ul>
