@@ -12,11 +12,10 @@ const Header = () => {
         <div className=" flex flex-col   ">
           <div className="border mt-5 w-36 cursor-pointer h-36 hover:animate-pulse m-auto flex justify-center items-center" style={{ borderRadius: "50%" }}>
             <Image 
-              src={'/umidjon1.jpg'}
+              src={'/umidjon.jpg'}
               width={1000}
               alt='assa'
-              height={1000}
-              style={{ borderRadius: "50%", height: "100%" }}
+              style={{ borderRadius: "50%", height: "300px" }}
             />
           </div>
           <h1 className='font-semibold text-[22px] text-center mt-2'>Umidjon G'afforov</h1>
