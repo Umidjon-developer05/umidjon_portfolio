@@ -59,7 +59,7 @@ const Form = () => {
   };
 
   return (
-    <form action="" onSubmit={handleSubmit} className='w-[600px] mx-auto z-50'>
+    <form action="" onSubmit={handleSubmit} className='w-[500px] mx-auto z-50'>
       <div className='sm:w-full  flex flex-col gap-10 mt-5'>
         <Input onChange={(e) => setTitle(e.target.value)} value={title} type="text" placeholder="Your Name" className='p-6' />
         <Input onChange={(e) => setDescription(e.target.value)} value={description} type="email" placeholder="Email" className='p-6' />
