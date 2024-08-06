@@ -51,7 +51,7 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <nav>
+          <nav className="p-10">
             <ul className="flex flex-col gap-5">
               <li className="font-semibold text-[18px] cursor-pointer transition-transform duration-150 transform hover:scale-110 hover:text-green-500 hover:border-green-500 border-b-2 border-solid">
                 <Link href='#About'>About</Link>
