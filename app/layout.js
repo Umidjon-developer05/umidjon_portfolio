@@ -13,20 +13,20 @@ import About from "./About/page";
 import { Toaster } from "@/components/ui/toaster"
 import StarsCanvas from "@/components/StarBackground";
 export const metadata: Metadata = {
-  metadataBase: new URL("https://umidjon.store"),
+  metadataBase: new URL("https://umidjon.site"),
   title: "Umidjon portfolio",
   description:
-    "Umidjon Praktikum Next.js dasturlash kurslari, amaliyotlar, startup loyihalar va asosiysi sifatli ta'limdir.",
+    "Umidjon portfolio",
   authors: [
-    { name: "Umidjon Gafforov ", url: "https://umidjon.store" },
+    { name: "Umidjon Gafforov ", url: "https://umidjon.site" },
   ],
   icons: { icon: "/logo (2).svg" },
   openGraph: {
-    title: "Umidjon praktikum | Dasturlash kurslari",
+    title: "Umidjon portfolio",
     description:
-      "Umidjon Praktikum Next.js dasturlash kurslari, amaliyotlar, startup loyihalar va asosiysi sifatli ta'limdir.",
+      "Umidjon portfolio",
     type: "website",
-    url: "https://umidjon.store",
+    url: "https://umidjon.site",
     locale: "uz_UZ",
     images: "https://0evi7lr5v8.ufs.sh/f/LN78d9BJu8QkU2FhAc05evHGXpqZ4SA9ilT8VdO3PBtIKJxk",
     countryName: "Uzbekistan",
