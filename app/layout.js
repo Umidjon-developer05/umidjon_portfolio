@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   authors: [
     { name: "Umidjon Gafforov ", url: "https://umidjon.store" },
   ],
-  icons: { icon: "/logo.svg" },
+  icons: { icon: "/logo (2).svg" },
   openGraph: {
     title: "Umidjon praktikum | Dasturlash kurslari",
     description:
